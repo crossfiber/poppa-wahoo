@@ -89,6 +89,14 @@ summary::-webkit-details-marker{display:none}
 summary::after{content:'+';color:var(--accd);font-weight:700;font-size:1.2rem}
 details[open] summary::after{content:'\2013'}
 details p{padding:0 4px 18px;color:var(--txs);font-size:0.97rem;line-height:1.68;max-width:64ch}
+.xlink{padding:30px 0 38px;border-top:1px solid var(--line)}
+.xlink h2{font-size:1.3rem;color:var(--dark);margin-bottom:14px}
+.xlink ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 32px}
+.xlink li{padding:4px 0}
+.xlink a{font-size:0.94rem;font-weight:600;color:var(--accd);border-bottom:1px solid transparent}
+.xlink a:hover{border-color:var(--accd)}
+.xlink a i{font-size:0.8em;margin-right:9px}
+@media(max-width:640px){.xlink ul{grid-template-columns:1fr}}
 .related{padding:34px 0 54px;border-top:1px solid var(--line)}
 .related h2{font-size:1.3rem;color:var(--dark);margin-bottom:18px}
 .rel-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -184,6 +192,7 @@ body.modal-open{overflow:hidden}
     <h2>Season questions</h2>
     <details><summary>What is the best month to fish Islamorada?</summary><p>For sailfish, winter. For mahi, early summer. For a guaranteed bent rod, any month: the humps hold blackfin tuna year-round.</p></details><details><summary>Is summer too hot to fish?</summary><p>Mornings and evenings are the play: 7 am departures beat the heat, and the 5 pm shark trip turns the hottest part of the day into pool time.</p></details><details><summary>What about hurricane season?</summary><p>The fleet fishes it like locals always have: watch the forecast, take the good windows. Weather cancellations by the captain are refunded in full.</p></details>
   </section>
+  
   <section class="related">
     <h2>Keep planning</h2>
     <div class="rel-row"><a href="../sailfish-charters-islamorada/"><i class="fa-solid fa-fish-fins"></i>Winter Sailfish</a><a href="../mahi-mahi-fishing-islamorada/"><i class="fa-solid fa-fish-fins"></i>Summer Mahi</a><a href="../islamorada-fishing-charter-cost/"><i class="fa-solid fa-fish-fins"></i>What a Charter Costs</a></div>
