@@ -30,7 +30,7 @@ Heritage editorial luxury: the family that literally wrote the book on Keys fish
 ## Remaining placeholders / client asks
 - [REAL PHOTO NEEDED: Capt. Skip Bradeen] (his legend card is deliberately text-led until a photo arrives).
 - Boat length inconsistency upstream (54' vs 55'): used 55' per FishingBooker + majority of their pages.
-- "Ryan Epstein" identity: public records show David + Brian. Confirm for contracts.
+- Client contact confirmed: Brian Epstein (user initially misheard the name as Ryan).
 
 ## Hotlinking risks
 - All images downloaded from the Guidesly CloudFront CDN (dlsmyzcs6vrg4.cloudfront.net) and re-hosted in assets/. Leaving Guidesly will not break this site.
