@@ -46,7 +46,25 @@ nav.top{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);back
 .nav-phone i{color:var(--accd);margin-right:6px}
 .nav-cta{padding:10px 18px;background:var(--acc);color:var(--dark);font-weight:700;font-size:0.74rem;letter-spacing:0.07em;text-transform:uppercase}
 @media(max-width:900px){.nav-links{display:none}}
-@media(max-width:640px){.nav-phone span{display:none}}
+@media(max-width:640px){.nav-phone span{display:none}.nav-cta{display:none}}
+.hamburger{display:none;width:42px;height:42px;background:transparent;border:1.5px solid var(--line);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
+.hamburger span{display:block;width:20px;height:2.5px;background:var(--dark)}
+@media(max-width:900px){.hamburger{display:inline-flex}}
+.nav-drawer{position:fixed;top:0;right:0;width:330px;max-width:88vw;height:100dvh;background:var(--dark);color:#fff;z-index:1001;transform:translateX(100%);visibility:hidden;transition:transform .32s cubic-bezier(.2,.8,.2,1),visibility .32s;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top)}
+.nav-drawer.open{transform:translateX(0);visibility:visible}
+.drawer-header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,0.14)}
+.drawer-header span{font-family:var(--hf);font-weight:600;font-size:1.05rem;text-transform:none;color:#fff}
+.drawer-close{background:none;border:none;font-size:1.35rem;color:#fff;cursor:pointer;width:40px;height:40px}
+.drawer-links{display:flex;flex-direction:column;flex:1;overflow-y:auto;min-height:0;padding:8px 0}
+.drawer-links a{padding:15px 20px;color:#fff;font-family:var(--hf);font-weight:600;font-size:1.12rem;text-transform:none;border-bottom:1px solid rgba(255,255,255,0.08)}
+.drawer-links a:hover{color:var(--accl)}
+.drawer-footer{padding:16px 20px calc(18px + env(safe-area-inset-bottom));border-top:1px solid rgba(255,255,255,0.14);display:flex;flex-direction:column;gap:11px}
+.drawer-phone{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#fff;color:var(--dark);font-weight:700;font-size:1.02rem;padding:13px}
+.drawer-phone i{color:var(--accd)}
+.drawer-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--acc);color:var(--dark);font-weight:700;font-size:0.85rem;letter-spacing:0.07em;text-transform:uppercase;padding:13px}
+.drawer-ov{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.drawer-ov.show{opacity:1;visibility:visible}
+body.drawer-open{overflow:hidden}
 .crumbs{padding:calc(var(--nav-h) + 26px) 0 0;font-size:0.8rem;color:var(--txs)}
 .crumbs a{color:var(--accd);font-weight:600}
 .crumbs i{font-size:0.7em;margin:0 8px;opacity:0.6}
@@ -105,7 +123,22 @@ details p{padding:0 4px 18px;color:var(--txs);font-size:0.97rem;line-height:1.68
 .rel-row a i{color:var(--accd);margin-right:9px;font-size:0.85em}
 @media(max-width:700px){.rel-row{grid-template-columns:1fr}}
 footer{background:var(--dark);color:rgba(255,255,255,0.72);padding:38px 0 24px}
+.f-top{max-width:980px;margin:0 auto 24px;padding:0 26px 24px;border-bottom:1px solid rgba(255,255,255,0.12)}
+.ft-brand{font-family:var(--hf);font-weight:600;font-size:1.3rem;color:#fff;text-transform:none;margin-bottom:6px}
+.ft-line{font-size:0.9rem;color:rgba(255,255,255,0.65);max-width:56ch;margin-bottom:14px}
+.ft-contact{display:flex;gap:22px;flex-wrap:wrap}
+.ft-contact a{display:inline-flex;align-items:center;gap:9px;color:#fff;font-weight:600;font-size:0.92rem}
+.ft-contact a i{color:var(--accl)}
+.ft-contact a:hover{color:var(--accl)}
 .f-dir{max-width:980px;margin:0 auto 26px;padding:0 26px 26px;border-bottom:1px solid rgba(255,255,255,0.12);display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:700px){
+  .f-dir{grid-template-columns:1fr 1fr;gap:2px 20px}
+  .f-dir h4{cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:0;padding:9px 0}
+  .f-dir h4::after{content:'+';font-weight:700;font-size:1rem;color:var(--accl);transition:transform .3s}
+  .f-dir div.open h4::after{transform:rotate(45deg)}
+  .f-dir ul{max-height:0;overflow:hidden;transition:max-height .34s ease}
+  .f-dir div.open ul{padding-bottom:8px}
+}
 .f-dir h4{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accl);margin-bottom:10px;font-family:var(--bf)}
 .f-dir ul{list-style:none;columns:1}
 .f-dir li{padding:3px 0}
@@ -163,9 +196,46 @@ body.modal-open{overflow:hidden}
     <div class="nav-right">
       <a href="tel:+13053945350" class="nav-phone"><i class="fa-solid fa-phone-volume"></i><span> (305) 394-5350</span></a>
       <a href="#" class="nav-cta" data-book="Nearshore on Poppa Bay (from $1,050)">Book a Trip</a>
+      <button class="hamburger" id="navBurger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
+<div class="drawer-ov" id="drawerOv"></div>
+<aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="Site menu">
+  <div class="drawer-header"><span>Poppa Wahoo</span><button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button></div>
+  <nav class="drawer-links">
+    <a href="../">Home</a>
+    <a href="../#trips">Trips &amp; Rates</a><a href="../#fleet">The Fleet</a><a href="../captains/">The Captains</a><a href="../reviews/">Reviews</a><a href="../islamorada-fishing-seasons/">Season Calendar</a><a href="../#faq">FAQ</a>
+  </nav>
+  <div class="drawer-footer">
+    <a href="tel:+13053945350" class="drawer-phone"><i class="fa-solid fa-phone-volume"></i> (305) 394-5350</a>
+    <a href="#" class="drawer-cta" data-book="Nearshore on Poppa Bay (from $1,050)">Book a Trip</a>
+  </div>
+</aside>
+<script>
+(function(){
+  var d=document.getElementById('navDrawer'),o=document.getElementById('drawerOv');
+  var b=document.getElementById('navBurger'),c=document.getElementById('drawerClose');
+  function open(){d.classList.add('open');o.classList.add('show');document.body.classList.add('drawer-open');d.setAttribute('aria-hidden','false');}
+  function close(){d.classList.remove('open');o.classList.remove('show');document.body.classList.remove('drawer-open');d.setAttribute('aria-hidden','true');}
+  b.addEventListener('click',open);c.addEventListener('click',close);o.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setTimeout(close,120);});});
+  var mq=window.matchMedia('(max-width:700px)');
+  document.querySelectorAll('.f-dir > div').forEach(function(col){
+    var h=col.querySelector('h4');if(!h)return;
+    h.addEventListener('click',function(){
+      if(!mq.matches)return;
+      var ul=col.querySelector('ul');if(!ul)return;
+      var op=col.classList.toggle('open');
+      ul.style.maxHeight=op?(ul.scrollHeight+'px'):null;
+    });
+  });
+  window.addEventListener('resize',function(){
+    if(!mq.matches){document.querySelectorAll('.f-dir > div').forEach(function(c){c.classList.remove('open');var u=c.querySelector('ul');if(u)u.style.maxHeight=null;});}
+  });
+})();
+</script>
 
 <div class="wrap">
   <div class="crumbs"><a href="../">Poppa Wahoo</a><i class="fa-solid fa-angle-right"></i>Yellowtail Snapper</div>
@@ -200,6 +270,14 @@ body.modal-open{overflow:hidden}
 </div>
 
 <footer>
+  <div class="f-top">
+    <div class="ft-brand">The Poppa Wahoo Collective</div>
+    <p class="ft-line">Family-run, veteran-owned sportfishing out of Islamorada, founded in tribute to Bob Epstein.</p>
+    <div class="ft-contact">
+      <a href="tel:+13053945350"><i class="fa-solid fa-phone-volume"></i> (305) 394-5350</a>
+      <a href="mailto:davidepstein1969@icloud.com"><i class="fa-solid fa-envelope"></i> davidepstein1969@icloud.com</a>
+    </div>
+  </div>
   <div class="f-dir"><div><h4>Target species</h4><ul><li><a href="../wahoo-fishing-islamorada/">Wahoo Fishing</a></li><li><a href="../mahi-mahi-fishing-islamorada/">Mahi Mahi Fishing</a></li><li><a href="../sailfish-charters-islamorada/">Sailfish Charters</a></li><li><a href="../swordfish-charters-islamorada/">Swordfish Charters</a></li><li><a href="../blackfin-tuna-islamorada/">Blackfin Tuna</a></li><li><a href="../blue-marlin-islamorada/">Blue Marlin</a></li><li><a href="../king-mackerel-islamorada/">King Mackerel</a></li><li><a href="../amberjack-fishing-islamorada/">Amberjack</a></li><li><a href="../gag-grouper-islamorada/">Gag Grouper</a></li><li><a href="../mutton-snapper-islamorada/">Mutton Snapper</a></li><li><a href="../yellowtail-snapper-islamorada/" class="cur">Yellowtail Snapper</a></li><li><a href="../shark-fishing-islamorada/">Shark Fishing</a></li></ul></div><div><h4>The trips</h4><ul><li><a href="../deep-sea-fishing-islamorada/">Deep Sea Charters</a></li><li><a href="../half-day-fishing-charter-islamorada/">Half Day Trips</a></li><li><a href="../nearshore-fishing-islamorada/">Nearshore &amp; Reef</a></li><li><a href="../sunset-cruise-islamorada/">Sunset Cruise</a></li><li><a href="../sandbar-boat-trip-islamorada/">Sandbar Trips</a></li><li><a href="../family-fishing-charters-islamorada/">Family Charters</a></li><li><a href="../bachelor-party-charter-islamorada/">Bachelor Parties</a></li><li><a href="../corporate-fishing-charters-islamorada/">Corporate Days</a></li></ul></div><div><h4>Month by month</h4><ul><li><a href="../islamorada-fishing-in-january/">January</a></li><li><a href="../islamorada-fishing-in-february/">February</a></li><li><a href="../islamorada-fishing-in-march/">March</a></li><li><a href="../islamorada-fishing-in-april/">April</a></li><li><a href="../islamorada-fishing-in-may/">May</a></li><li><a href="../islamorada-fishing-in-june/">June</a></li><li><a href="../islamorada-fishing-in-july/">July</a></li><li><a href="../islamorada-fishing-in-august/">August</a></li><li><a href="../islamorada-fishing-in-september/">September</a></li><li><a href="../islamorada-fishing-in-october/">October</a></li><li><a href="../islamorada-fishing-in-november/">November</a></li><li><a href="../islamorada-fishing-in-december/">December</a></li></ul></div><div><h4>Plan your trip</h4><ul><li><a href="../">Home</a></li><li><a href="../islamorada-fishing-charter-cost/">What a Charter Costs</a></li><li><a href="../islamorada-fishing-seasons/">Season Calendar</a></li><li><a href="../fishing-charter-from-miami/">From Miami</a></li><li><a href="../fishing-charter-from-fort-lauderdale/">From Fort Lauderdale</a></li><li><a href="../marathon-fishing-charters/">Near Marathon</a></li><li><a href="../fishing-charter-near-postcard-inn/">From Postcard Inn</a></li><li><a href="../fishing-charter-near-cheeca-lodge/">From Cheeca Lodge</a></li><li><a href="../fishing-charter-near-islander-resort/">From Islander Resort</a></li><li><a href="../fishing-charter-near-hawks-cay/">From Hawks Cay</a></li></ul></div><div><h4>The boats</h4><ul><li><a href="../poppa-wahoo-55-hatteras/">Poppa Wahoo, 55' Hatteras</a></li><li><a href="../poppa-wahoo-too-53-hatteras/">Poppa Wahoo Too, 53' Hatteras</a></li><li><a href="../poppa-bay-25-sea-hunt/">Poppa Bay, 25' Sea Hunt</a></li><li><a href="../poppa-toon-23-barletta/">Poppa Toon, 23' Barletta</a></li></ul></div><div><h4>The family</h4><ul><li><a href="../captains/">The Captains</a></li><li><a href="../bob-epstein/">The Bob Epstein Legacy</a></li><li><a href="../reviews/">Reviews</a></li><li><a href="../gallery/">Gallery</a></li><li><a href="../shark-fishing-islamorada/">Shark Trips</a></li><li><a href="../swordfish-charters-islamorada/">Overnight Swordfish</a></li></ul></div></div>
   <div class="f-in">
     <div>&copy; 2026 The Poppa Wahoo Collective &middot; <a href="../">Home</a> &middot; <a href="tel:+13053945350">(305) 394-5350</a></div>
