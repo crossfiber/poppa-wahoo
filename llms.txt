@@ -6,7 +6,7 @@
 - Dock: Three Waters Resort and Marina, 84001 Overseas Hwy, Islamorada, FL 33036
 - Nearshore departures: Square Grouper, 80461 Overseas Hwy, Islamorada
 - Phone (call or text): (305) 394-5350
-- Email: info@poppawahoo.com
+- Email: davidepstein1969@icloud.com
 - Hours: daily, 5 am to 9 pm
 - Veteran owned, family run
 - Rating: 5.0 across 7 published charter reviews
@@ -59,3 +59,11 @@
 - https://crossfiber.github.io/poppa-wahoo/poppa-wahoo-too-53-hatteras/
 - https://crossfiber.github.io/poppa-wahoo/poppa-bay-25-sea-hunt/
 - https://crossfiber.github.io/poppa-wahoo/poppa-toon-23-barletta/
+
+## Trips
+- [Deep Sea Fishing](https://crossfiber.github.io/poppa-wahoo/deep-sea-fishing-islamorada/): Three-quarter ($1,975) and full day ($2,475) offshore charters on a 55' Hatteras
+- [Half Day Charter](https://crossfiber.github.io/poppa-wahoo/half-day-fishing-charter-islamorada/): 4-hour deep sea trip, $1,475
+- [Nearshore & Reef](https://crossfiber.github.io/poppa-wahoo/nearshore-fishing-islamorada/): Calm-water trips on a 25' Sea Hunt, from $1,050
+- [Sunset Cruise](https://crossfiber.github.io/poppa-wahoo/sunset-cruise-islamorada/): Private 2-hour cruise, $575
+- [Sandbar Trips](https://crossfiber.github.io/poppa-wahoo/sandbar-boat-trip-islamorada/): Private sandbar afternoons, $800
+- [Family Charters](https://crossfiber.github.io/poppa-wahoo/family-fishing-charters-islamorada/): Kid-friendly trips matched to your crew
