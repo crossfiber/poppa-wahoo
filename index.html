@@ -106,7 +106,6 @@ nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h)
 .drawer-close:hover{color:var(--gold-lite)}
 .drawer-links{display:flex;flex-direction:column;flex:1;overflow-y:auto;min-height:0;padding:8px 0}
 .drawer-links a{padding:16px 22px;color:var(--ivory);font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.18rem;border-bottom:1px solid var(--line-d-soft);transition:color .2s,background .2s,padding-left .2s}
-.drawer-links a i{color:var(--gold-lite);width:24px;margin-right:8px;font-size:0.85em}
 .drawer-links a:hover{color:var(--gold-lite);background:rgba(248,245,238,0.05);padding-left:30px}
 .drawer-footer{padding:18px 22px calc(20px + env(safe-area-inset-bottom));border-top:1px solid var(--line-d);background:rgba(248,245,238,0.05);display:flex;flex-direction:column;gap:12px}
 .drawer-phone{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#fff;color:var(--navy);font-weight:700;font-size:1.05rem;padding:13px;border-radius:2px}
@@ -441,16 +440,18 @@ body.modal-open{overflow:hidden}
 .bk-note{font-size:0.82rem;color:var(--text-soft);margin-top:12px;line-height:1.55}
 @media(max-width:760px){.bk-body{grid-template-columns:1fr;gap:20px;padding:20px}.bk-head{padding:16px 20px}.bk-frow{grid-template-columns:1fr}}
 
-/* mobile compartmentalization: trip groups + footer directory collapse (P&C accordion mechanics, PW skin) */
-.tg-body{max-height:none;overflow:visible}
+/* mobile: compact trip tiles + collapsible footer directory */
+.trips-compact{display:none}
 @media(max-width:760px){
-  .trip-group{border:1px solid var(--line);background:var(--paper,#fff);margin-bottom:12px}
-  .trip-group .tg-label{margin:0;padding:16px 16px;cursor:pointer;justify-content:space-between;user-select:-webkit-user-select}
-  .trip-group .tg-label::after{content:'+';font-size:1.15rem;font-weight:700;color:var(--gold-deep);transition:transform .3s}
-  .trip-group.open .tg-label::after{transform:rotate(45deg)}
-  .tg-body{max-height:0;overflow:hidden;transition:max-height .34s ease}
-  .tg-body-in{padding:0 12px 12px}
-  .trip-group.open{border-color:var(--gold)}
+  .trip-group{display:none}
+  .trips-compact{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+  .tc-tile{display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid var(--line);padding:14px 13px;position:relative}
+  .tc-tile:active{border-color:var(--gold)}
+  .tc-name{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:0.98rem;color:var(--navy);line-height:1.2;padding-right:14px}
+  .tc-price{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.02rem;color:var(--gold-deep)}
+  .tc-meta{font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-soft)}
+  .tc-tile::after{content:'\2192';position:absolute;top:12px;right:12px;color:var(--gold);font-weight:700;font-size:0.85rem}
+  .trips-compact .tc-book{grid-column:1 / -1;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:var(--navy);font-weight:700;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;padding:15px;margin-top:2px}
   .foot-dir > div > h4{cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:0;padding:9px 0}
   .foot-dir > div > h4::after{content:'+';font-weight:700;font-size:1rem;color:var(--gold-lite);transition:transform .3s}
   .foot-dir > div.open > h4::after{transform:rotate(45deg)}
@@ -493,13 +494,13 @@ body.modal-open{overflow:hidden}
     <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
   </div>
   <nav class="drawer-links">
-    <a href="#legacy"><i class="fa-solid fa-book-open"></i>The Legacy</a>
-    <a href="#fleet"><i class="fa-solid fa-ship"></i>The Fleet</a>
-    <a href="#trips"><i class="fa-solid fa-fish-fins"></i>Trips &amp; Rates</a>
-    <a href="#captains"><i class="fa-solid fa-compass"></i>The Captains</a>
-    <a href="#reviews"><i class="fa-solid fa-quote-left"></i>Reviews</a>
-    <a href="#faq"><i class="fa-solid fa-circle-question"></i>FAQ</a>
-    <a href="#contact"><i class="fa-solid fa-calendar-check"></i>Book a Trip</a>
+    <a href="#legacy">The Legacy</a>
+    <a href="#fleet">The Fleet</a>
+    <a href="#trips">Trips &amp; Rates</a>
+    <a href="#captains">The Captains</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Book a Trip</a>
   </nav>
   <div class="drawer-footer">
     <a href="tel:+13053945350" class="drawer-phone"><i class="fa-solid fa-phone-volume"></i> (305) 394-5350</a>
@@ -512,7 +513,7 @@ body.modal-open{overflow:hidden}
 <!-- HERO -->
 <header class="hero">
   <div class="hero-inner">
-    <span class="hero-eyebrow">Islamorada, Florida Keys &middot; Veteran Owned</span>
+    <span class="hero-eyebrow">Islamorada, Florida Keys</span>
     <h1>Islamorada charters from the family that <em>wrote the book</em> on Keys fishing.</h1>
     <p class="lede">Four boats, one family. Deep sea trips aboard a 55 foot Hatteras, overnight swordfishing, evening shark runs, and sunset cruises, all out of Islamorada. <span class="m-trim">Founded by the sons of Bob Epstein, the Miami Herald's legendary fishing editor. </span>Real rates below. No surprises at the dock.</p>
     <div class="hero-ctas">
@@ -621,9 +622,11 @@ body.modal-open{overflow:hidden}
 <section id="trips" class="trips">
   <div class="wrap">
     <div class="trips-head">
-      <h2>Trips and rates, <em>posted like Poppa would want.</em></h2>
+      <h2>Trips and rates, <em>posted in plain sight.</em></h2>
       <p class="incl"><b>Every fishing trip includes</b> the boat, fuel, captain and mate, rods, tackle, live bait, fishing licenses, bottled water, snacks, and catch cleaning at the dock.</p>
     </div>
+    <div class="trips-compact"><a class="tc-tile" href="half-day-fishing-charter-islamorada/"><span class="tc-name">Deep Sea Half Day</span><span class="tc-price">$1,475</span><span class="tc-meta">4 hrs</span></a><a class="tc-tile" href="deep-sea-fishing-islamorada/"><span class="tc-name">Three-Quarter &amp; Full Day</span><span class="tc-price">$1,975 / $2,475</span><span class="tc-meta">6 or 8 hrs</span></a><a class="tc-tile" href="shark-fishing-islamorada/"><span class="tc-name">Evening Shark Trip</span><span class="tc-price">$1,000</span><span class="tc-meta">3 hrs &middot; 5 pm</span></a><a class="tc-tile" href="swordfish-charters-islamorada/"><span class="tc-name">Overnight Swordfish</span><span class="tc-price">$2,700</span><span class="tc-meta">Overnight</span></a><a class="tc-tile" href="nearshore-fishing-islamorada/"><span class="tc-name">Nearshore on Poppa Bay</span><span class="tc-price">From $1,050</span><span class="tc-meta">Calm water</span></a><a class="tc-tile" href="sunset-cruise-islamorada/"><span class="tc-name">Sunset Cruise</span><span class="tc-price">$575</span><span class="tc-meta">2 hrs</span></a><a class="tc-tile" href="sandbar-boat-trip-islamorada/"><span class="tc-name">Sandbar Cruise</span><span class="tc-price">$800</span><span class="tc-meta">3 hrs</span></a><a class="tc-book" href="#" data-book=""><i class="fa-solid fa-calendar-check"></i> Book a Trip</a></div>
+
 
     <div class="trip-group">
       <div class="tg-label">Offshore on the Hatteras</div>
@@ -920,7 +923,7 @@ body.modal-open{overflow:hidden}
 <footer>
   <div class="wrap">
     <div class="foot-signoff">
-      <p>Send you home with a story <b>Poppa would have written up.</b></p>
+      <p>Send you home with <b>a story worth telling.</b></p>
     </div>
     <div class="foot-grid">
       <div class="foot-brand">
@@ -1281,42 +1284,19 @@ window.submitForm=function(e){
 <script>
 (function(){
   var mq=window.matchMedia('(max-width:760px)');
-  function isM(){return mq.matches;}
-  // trip groups: single-open, first open by default on mobile
-  var groups=Array.prototype.slice.call(document.querySelectorAll('.trip-group'));
-  function setOpen(g,open){
-    var b=g.querySelector('.tg-body');if(!b)return;
-    g.classList.toggle('open',open);
-    b.style.maxHeight=open?(b.scrollHeight+'px'):null;
-  }
-  groups.forEach(function(g,idx){
-    var lab=g.querySelector('.tg-label');if(!lab)return;
-    lab.addEventListener('click',function(){
-      if(!isM())return;
-      var was=g.classList.contains('open');
-      groups.forEach(function(o){setOpen(o,false);});
-      if(!was){setOpen(g,true);}
-    });
-  });
-  // footer directory: independent toggles, all closed on mobile
   document.querySelectorAll('.foot-dir > div').forEach(function(col){
     var h=col.querySelector('h4');if(!h)return;
     h.addEventListener('click',function(){
-      if(!isM())return;
+      if(!mq.matches)return;
       var ul=col.querySelector('ul');if(!ul)return;
       var open=col.classList.toggle('open');
       ul.style.maxHeight=open?(ul.scrollHeight+'px'):null;
     });
   });
-  function applyMode(){
-    if(isM()){groups.forEach(function(g,i){setOpen(g,i===0);});}
-    else{
-      groups.forEach(function(g){g.classList.remove('open');var b=g.querySelector('.tg-body');if(b)b.style.maxHeight=null;});
-      document.querySelectorAll('.foot-dir > div').forEach(function(c){c.classList.remove('open');var u=c.querySelector('ul');if(u)u.style.maxHeight=null;});
-    }
+  function reset(){
+    if(!mq.matches){document.querySelectorAll('.foot-dir > div').forEach(function(c){c.classList.remove('open');var u=c.querySelector('ul');if(u)u.style.maxHeight=null;});}
   }
-  applyMode();
-  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(applyMode,150);});
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(reset,150);});
 })();
 </script>
 </body>
