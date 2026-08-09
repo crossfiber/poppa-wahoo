@@ -132,4 +132,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+<url><loc>https://crossfiber.github.io/poppa-wahoo/deep-sea-fishing-islamorada/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://crossfiber.github.io/poppa-wahoo/half-day-fishing-charter-islamorada/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://crossfiber.github.io/poppa-wahoo/nearshore-fishing-islamorada/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://crossfiber.github.io/poppa-wahoo/sunset-cruise-islamorada/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://crossfiber.github.io/poppa-wahoo/sandbar-boat-trip-islamorada/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://crossfiber.github.io/poppa-wahoo/family-fishing-charters-islamorada/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
