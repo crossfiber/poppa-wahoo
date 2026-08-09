@@ -440,6 +440,24 @@ body.modal-open{overflow:hidden}
 .bk-submit{width:100%;margin-top:6px}
 .bk-note{font-size:0.82rem;color:var(--text-soft);margin-top:12px;line-height:1.55}
 @media(max-width:760px){.bk-body{grid-template-columns:1fr;gap:20px;padding:20px}.bk-head{padding:16px 20px}.bk-frow{grid-template-columns:1fr}}
+
+/* mobile compartmentalization: trip groups + footer directory collapse (P&C accordion mechanics, PW skin) */
+.tg-body{max-height:none;overflow:visible}
+@media(max-width:760px){
+  .trip-group{border:1px solid var(--line);background:var(--paper,#fff);margin-bottom:12px}
+  .trip-group .tg-label{margin:0;padding:16px 16px;cursor:pointer;justify-content:space-between;user-select:-webkit-user-select}
+  .trip-group .tg-label::after{content:'+';font-size:1.15rem;font-weight:700;color:var(--gold-deep);transition:transform .3s}
+  .trip-group.open .tg-label::after{transform:rotate(45deg)}
+  .tg-body{max-height:0;overflow:hidden;transition:max-height .34s ease}
+  .tg-body-in{padding:0 12px 12px}
+  .trip-group.open{border-color:var(--gold)}
+  .foot-dir > div > h4{cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:0;padding:9px 0}
+  .foot-dir > div > h4::after{content:'+';font-weight:700;font-size:1rem;color:var(--gold-lite);transition:transform .3s}
+  .foot-dir > div.open > h4::after{transform:rotate(45deg)}
+  .foot-dir > div > ul{max-height:0;overflow:hidden;transition:max-height .34s ease}
+  .foot-dir > div.open > ul{padding-bottom:8px}
+  .foot-dir{grid-template-columns:1fr 1fr;gap:2px 20px}
+}
 </style>
 </head>
 <body>
@@ -609,6 +627,7 @@ body.modal-open{overflow:hidden}
 
     <div class="trip-group">
       <div class="tg-label">Offshore on the Hatteras</div>
+      <div class="tg-body"><div class="tg-body-in">
       <div class="trip-row">
         <div class="tr-photo" style="background-image:url('assets/catch-mahi-yellowtail.jpg')" role="img" aria-label="Mahi mahi and yellowtail catch hung at the Poppa Wahoo dock sign in Islamorada"></div>
         <div class="tr-main">
@@ -626,11 +645,12 @@ body.modal-open{overflow:hidden}
           <p>More hours, more range, more shots at the big ones. Time to run to the far humps, deep drop, and work multiple patterns in one trip.</p>
         </div>
         <div class="tr-price"><span class="p">$1,975 / $2,475<small>6 hr / 8 hr</small></span><a class="book" href="#contact" data-book="Deep sea three-quarter or full day ($1,975 / $2,475)">Book It</a><a class="tlink" href="deep-sea-fishing-islamorada/" style="margin-top:8px;font-size:0.72rem">Trip details <i class="fa-solid fa-arrow-right-long"></i></a></div>
-      </div>
+      </div></div></div>
     </div>
 
     <div class="trip-group">
       <div class="tg-label">After Dark</div>
+      <div class="tg-body"><div class="tg-body-in">
       <div class="trip-row">
         <div class="tr-photo" style="background-image:url('assets/shark-trip.jpg')" role="img" aria-label="The Poppa Wahoo Hatteras at the Islamorada dock before an evening shark trip"></div>
         <div class="tr-main">
@@ -648,11 +668,12 @@ body.modal-open{overflow:hidden}
           <p>Electric reels, glow sticks, and deep baits in the swordfish grounds while the boat sleeps six. Captain David's specialty, and the fleet's signature hunt.</p>
         </div>
         <div class="tr-price"><span class="p">$2,700<small>Overnight</small></span><a class="book" href="#contact" data-book="Overnight swordfish ($2,700)">Book It</a><a class="tlink" href="swordfish-charters-islamorada/" style="margin-top:8px;font-size:0.72rem">Trip details <i class="fa-solid fa-arrow-right-long"></i></a></div>
-      </div>
+      </div></div></div>
     </div>
 
     <div class="trip-group">
       <div class="tg-label">Nearshore &amp; Reef</div>
+      <div class="tg-body"><div class="tg-body-in">
       <div class="trip-row">
         <div class="tr-photo" style="background-image:url('assets/reef-fishing.jpg')" role="img" aria-label="Angler fighting a fish on a nearshore reef trip with the Poppa Wahoo Collective"></div>
         <div class="tr-main">
@@ -661,11 +682,12 @@ body.modal-open{overflow:hidden}
           <p>Snapper, mackerel, and reef action on the 25 foot Sea Hunt. Shorter runs, lighter tackle, and calm-water options that are perfect with kids aboard.</p>
         </div>
         <div class="tr-price"><span class="p">From $1,050<small>3 hr</small></span><a class="book" href="#contact" data-book="Nearshore on Poppa Bay (from $1,050)">Book It</a><a class="tlink" href="nearshore-fishing-islamorada/" style="margin-top:8px;font-size:0.72rem">Trip details <i class="fa-solid fa-arrow-right-long"></i></a></div>
-      </div>
+      </div></div></div>
     </div>
 
     <div class="trip-group">
       <div class="tg-label">Cruises on the Toon</div>
+      <div class="tg-body"><div class="tg-body-in">
       <div class="trip-row">
         <div class="tr-photo" style="background-image:url('assets/sunset-cruise.jpg')" role="img" aria-label="Guests and their dog watching the sunset from the Poppa Toon in Islamorada"></div>
         <div class="tr-main">
@@ -683,7 +705,7 @@ body.modal-open{overflow:hidden}
           <p>Anchor up on the famous Islamorada sandbar with coolers, floats, and nowhere to be. The Toon carries the party; you bring the people.</p>
         </div>
         <div class="tr-price"><span class="p">$800<small>Sandbar</small></span><a class="book" href="#contact" data-book="Sandbar cruise ($800)">Book It</a><a class="tlink" href="sandbar-boat-trip-islamorada/" style="margin-top:8px;font-size:0.72rem">Trip details <i class="fa-solid fa-arrow-right-long"></i></a></div>
-      </div>
+      </div></div></div>
     </div>
 
     <div style="margin-top:36px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
@@ -1254,6 +1276,48 @@ window.submitForm=function(e){
   status.innerHTML="Your email app just opened with the request pre-filled. Faster answer? Call or text <a href='tel:+13053945350' style='color:var(--gold-lite);font-weight:700;'>(305) 394-5350</a>.";
   return false;
 };
+</script>
+
+<script>
+(function(){
+  var mq=window.matchMedia('(max-width:760px)');
+  function isM(){return mq.matches;}
+  // trip groups: single-open, first open by default on mobile
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.trip-group'));
+  function setOpen(g,open){
+    var b=g.querySelector('.tg-body');if(!b)return;
+    g.classList.toggle('open',open);
+    b.style.maxHeight=open?(b.scrollHeight+'px'):null;
+  }
+  groups.forEach(function(g,idx){
+    var lab=g.querySelector('.tg-label');if(!lab)return;
+    lab.addEventListener('click',function(){
+      if(!isM())return;
+      var was=g.classList.contains('open');
+      groups.forEach(function(o){setOpen(o,false);});
+      if(!was){setOpen(g,true);}
+    });
+  });
+  // footer directory: independent toggles, all closed on mobile
+  document.querySelectorAll('.foot-dir > div').forEach(function(col){
+    var h=col.querySelector('h4');if(!h)return;
+    h.addEventListener('click',function(){
+      if(!isM())return;
+      var ul=col.querySelector('ul');if(!ul)return;
+      var open=col.classList.toggle('open');
+      ul.style.maxHeight=open?(ul.scrollHeight+'px'):null;
+    });
+  });
+  function applyMode(){
+    if(isM()){groups.forEach(function(g,i){setOpen(g,i===0);});}
+    else{
+      groups.forEach(function(g){g.classList.remove('open');var b=g.querySelector('.tg-body');if(b)b.style.maxHeight=null;});
+      document.querySelectorAll('.foot-dir > div').forEach(function(c){c.classList.remove('open');var u=c.querySelector('ul');if(u)u.style.maxHeight=null;});
+    }
+  }
+  applyMode();
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(applyMode,150);});
+})();
 </script>
 </body>
 </html>
