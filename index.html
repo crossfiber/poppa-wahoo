@@ -78,7 +78,7 @@ img{max-width:100%;display:block}
 /* NAV */
 nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:var(--ivory);border-bottom:1px solid var(--line);box-shadow:0 1px 10px rgba(24,35,56,0.05);display:flex;align-items:center}
 .nav-inner{width:100%;max-width:1340px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.nav-logo{display:inline-flex;align-items:center;height:46px}
+.nav-logo{display:inline-flex;align-items:center;height:56px}
 .nav-logo img{height:100%;width:auto}
 .nav-links{display:flex;gap:28px;list-style:none}
 .nav-links a{font-weight:600;font-size:0.88rem;color:var(--text);transition:color .2s}
@@ -95,7 +95,7 @@ nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h)
 .mobile-call{width:44px;height:44px;background:var(--gold);color:var(--navy);display:inline-flex;align-items:center;justify-content:center;border-radius:2px}
 .hamburger{width:44px;height:44px;background:transparent;border:1.5px solid var(--line);border-radius:2px;cursor:pointer;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
 .hamburger span{display:block;width:22px;height:2.5px;background:var(--navy)}
-@media(max-width:600px){.nav-inner{padding:0 16px}.nav-logo{height:38px}}
+@media(max-width:600px){.nav-inner{padding:0 16px}.nav-logo{height:46px}}
 
 /* DRAWER */
 .nav-drawer{position:fixed;top:0;right:0;width:340px;max-width:88vw;height:100dvh;background:var(--navy);color:var(--ivory);z-index:1001;transform:translateX(100%);visibility:hidden;transition:transform .32s cubic-bezier(.2,.8,.2,1),visibility .32s;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top)}
@@ -105,9 +105,13 @@ nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h)
 .logo-pill img{height:30px;width:auto;display:block}
 .drawer-close{background:none;border:none;font-size:1.4rem;color:var(--ivory);cursor:pointer;width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center}
 .drawer-close:hover{color:var(--gold-lite)}
-.drawer-links{display:flex;flex-direction:column;flex:1;overflow-y:auto;min-height:0;padding:8px 0}
-.drawer-links a{padding:16px 22px;color:var(--ivory);font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.18rem;border-bottom:1px solid var(--line-d-soft);transition:color .2s,background .2s,padding-left .2s}
-.drawer-links a:hover{color:var(--gold-lite);background:rgba(248,245,238,0.05);padding-left:30px}
+.drawer-eyebrow{padding:20px 26px 4px;font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lite)}
+.drawer-links{display:flex;flex-direction:column;flex:1;overflow-y:auto;min-height:0;padding:2px 0 8px}
+.drawer-meta{padding:0 26px 16px;display:flex;gap:14px}
+.drawer-meta a{width:42px;height:42px;border:1px solid rgba(248,245,238,0.28);border-radius:2px;display:inline-flex;align-items:center;justify-content:center;color:var(--ivory);font-size:1rem;transition:border-color .2s,color .2s}
+.drawer-meta a:hover{border-color:var(--gold-lite);color:var(--gold-lite)}
+.drawer-links a{padding:16px 26px;color:var(--ivory);font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.5rem;line-height:1.15;transition:color .2s,background .2s,padding-left .2s}
+.drawer-links a:hover{color:var(--gold-lite);background:rgba(248,245,238,0.05);padding-left:34px}
 .drawer-footer{padding:18px 22px calc(20px + env(safe-area-inset-bottom));border-top:1px solid var(--line-d);background:rgba(248,245,238,0.05);display:flex;flex-direction:column;gap:12px}
 .drawer-phone{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#fff;color:var(--navy);font-weight:700;font-size:1.05rem;padding:13px;border-radius:2px}
 .drawer-phone i{color:var(--gold-d)}
@@ -198,7 +202,11 @@ body.drawer-open .mobile-actions{visibility:hidden}
 .spec-list li::before{content:'';width:14px;height:2px;background:var(--gold);flex-shrink:0}
 .spec-list i{color:var(--gold-lite);font-size:0.88em;width:18px;flex-shrink:0;text-align:center}
 @media(max-width:620px){.spec-list{grid-template-columns:1fr;gap:0}}
-@media(max-width:768px){.flagship-inner{padding:60px 22px}.flagship p{font-size:0.98rem}}
+.fleet-index{display:flex;flex-wrap:wrap;gap:10px;margin-top:38px}
+.fleet-index a,.fleet-index .fi-cur{font-family:'Figtree',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.05em;text-transform:uppercase;padding:10px 16px;border:1px solid rgba(248,245,238,0.35);color:var(--ivory);border-radius:999px;transition:border-color .2s,color .2s}
+.fleet-index .fi-cur{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.fleet-index a:hover{border-color:var(--gold-lite);color:var(--gold-lite)}
+@media(max-width:768px){.flagship-inner{padding:60px 22px}.flagship p{font-size:0.98rem}.fleet-index{margin-top:28px;gap:8px}.fleet-index a,.fleet-index .fi-cur{font-size:0.7rem;padding:8px 12px}}
 
 /* FLEET CARDS */
 .fleet{padding:96px 0 104px;background:var(--ivory-2)}
@@ -375,7 +383,7 @@ body.drawer-open .mobile-actions{visibility:hidden}
 
 /* FOOTER */
 footer{background:#081224;color:rgba(248,245,238,0.72);padding:62px 0 28px}
-.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1.1fr 1fr 1.1fr;gap:34px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:34px;align-items:start}
 .foot-brand .logo-pill{margin-bottom:16px}
 .foot-brand .logo-pill img{height:34px}
 .foot-brand p{font-size:0.93rem;line-height:1.62;max-width:36ch;margin-bottom:16px}
@@ -400,8 +408,9 @@ footer{background:#081224;color:rgba(248,245,238,0.72);padding:62px 0 28px}
 .built-by:hover{color:#fff}
 .built-by:hover img{opacity:1}
 @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}.foot-brand{grid-column:1/-1}.foot-bottom{padding:22px 22px 0}}
-.foot-dir{max-width:1240px;margin:46px auto 0;padding-top:34px;border-top:1px solid var(--line-d-soft);display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:30px}
-.foot-dir h4{font-family:'Figtree',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-lite);margin-bottom:11px}
+.foot-dir{max-width:1240px;margin:46px auto 0;padding-top:34px;border-top:1px solid var(--line-d-soft);display:grid;grid-template-columns:repeat(3,1fr);gap:34px 30px}
+.foot-months{display:grid;grid-template-columns:repeat(4,1fr);gap:0 12px}
+.foot-dir h4{font-family:'Figtree',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(248,245,238,0.55);margin-bottom:11px}
 .foot-dir ul{list-style:none}
 .foot-dir li{padding:4px 0}
 .foot-dir a{font-size:0.88rem;transition:color .2s}
@@ -504,6 +513,7 @@ body.modal-open{overflow:hidden}
     <a href="#top" class="logo-pill" aria-label="The Poppa Wahoo Collective home"><img src="assets/logo-dark.png" alt="The Poppa Wahoo Collective logo"></a>
     <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
   </div>
+  <div class="drawer-eyebrow">Islamorada &middot; Florida Keys</div>
   <nav class="drawer-links">
     <a href="#legacy">The Legacy</a>
     <a href="#fleet">The Fleet</a>
@@ -512,6 +522,11 @@ body.modal-open{overflow:hidden}
     <a href="#reviews">Reviews</a>
     <a href="#faq">FAQ</a>
   </nav>
+  <div class="drawer-meta">
+    <a href="https://www.facebook.com/ThePoppaWahooCollective" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/poppawahoo" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="mailto:davidepstein1969@icloud.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+  </div>
   <div class="drawer-footer">
     <a href="tel:+13053945350" class="drawer-phone"><i class="fa-solid fa-phone-volume"></i> (305) 394-5350</a>
     <a href="#contact" class="btn" data-book="">Book a Trip</a>
@@ -574,7 +589,7 @@ body.modal-open{overflow:hidden}
 <!-- FLAGSHIP -->
 <section id="fleet" class="flagship">
   <div class="flagship-inner">
-    <div class="kicker">The Fleet &middot; Flagship</div>
+    <div class="kicker">The Fleet &middot; Four Boats</div>
     <h2>Poppa Wahoo, the <em>55 foot Hatteras</em> that leads the family.</h2>
     <p>A classic Hatteras sportfisher rebuilt for serious offshore work and comfortable enough for a family day. Twin 1250 HP diesels cruise at 40 knots, so you spend the day fishing instead of riding.</p>
     <ul class="spec-list">
@@ -586,6 +601,12 @@ body.modal-open{overflow:hidden}
       <li>Tuna tubes &amp; live wells</li>
     </ul>
     <a href="#" class="btn" data-book="Deep sea half day ($1,475)"><i class="fa-solid fa-calendar-check"></i> Book the Poppa Wahoo</a> &nbsp; <a href="poppa-wahoo-55-hatteras/" class="btn btn-ghost">Full Specs &amp; Story</a>
+    <div class="fleet-index" aria-label="The four boats of the fleet">
+      <span class="fi-cur">1 of 4 &middot; Poppa Wahoo &middot; 55' Hatteras</span>
+      <a href="#boat-too">Wahoo Too &middot; 53'</a>
+      <a href="#boat-bay">Poppa Bay &middot; 25'</a>
+      <a href="#boat-toon">Poppa 'Toon &middot; 23'</a>
+    </div>
   </div>
 </section>
 
@@ -597,7 +618,7 @@ body.modal-open{overflow:hidden}
       <p>The right hull for your water: a second big Hatteras, a nimble bay boat, and the party barge.</p>
     </div>
     <div class="fleet-grid">
-      <article class="boat-card">
+      <article class="boat-card" id="boat-too">
         <div class="bc-photo" style="background-image:url('assets/wahoo-too.jpg');background-position:center 55%" role="img" aria-label="Poppa Wahoo Too, the 53 foot Hatteras with wahoo stripe hull wrap"></div>
         <div class="bc-body">
           <div class="bc-role">53' Hatteras Sportfisher</div>
@@ -606,7 +627,7 @@ body.modal-open{overflow:hidden}
           <a href="#contact" class="tlink" data-book="Deep sea three-quarter or full day ($1,975 / $2,475)">Book the Too <i class="fa-solid fa-arrow-right-long"></i></a> &nbsp; <a href="poppa-wahoo-too-53-hatteras/" class="tlink">Meet the Too <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
       </article>
-      <article class="boat-card">
+      <article class="boat-card" id="boat-bay">
         <div class="bc-photo" style="background-image:url('assets/nearshore.jpg')" role="img" aria-label="Poppa Bay, the 25 foot Sea Hunt bay boat running nearshore Islamorada water"></div>
         <div class="bc-body">
           <div class="bc-role">25' Sea Hunt Bay Boat</div>
@@ -615,7 +636,7 @@ body.modal-open{overflow:hidden}
           <a href="#contact" class="tlink" data-book="Nearshore on Poppa Bay (from $1,050)">Book the Bay <i class="fa-solid fa-arrow-right-long"></i></a> &nbsp; <a href="poppa-bay-25-sea-hunt/" class="tlink">Meet the Bay <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
       </article>
-      <article class="boat-card">
+      <article class="boat-card" id="boat-toon">
         <div class="bc-photo" style="background-image:url('assets/sandbar-cruise.jpg')" role="img" aria-label="Poppa Toon, the 23 foot Barletta tritoon used for sunset and sandbar cruises"></div>
         <div class="bc-body">
           <div class="bc-role">23' Barletta Tritoon</div>
@@ -919,7 +940,7 @@ body.modal-open{overflow:hidden}
           <div class="crow"><i class="fa-solid fa-envelope-open-text"></i><span><a href="mailto:davidepstein1969@icloud.com">davidepstein1969@icloud.com</a></span></div>
           <div class="crow"><i class="fa-solid fa-clock"></i><span>On the water daily, 5 am to 9 pm</span></div>
           <div class="social-row">
-            <a href="https://www.facebook.com/PoppaWahoo" target="_blank" rel="noopener" aria-label="Poppa Wahoo on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/ThePoppaWahooCollective" target="_blank" rel="noopener" aria-label="Poppa Wahoo on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/poppawahoo" target="_blank" rel="noopener" aria-label="Poppa Wahoo on Instagram"><i class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
@@ -940,43 +961,9 @@ body.modal-open{overflow:hidden}
         <a href="#top" class="logo-pill"><img src="assets/logo-dark.png" alt="The Poppa Wahoo Collective logo"></a>
         <p>Family-run, veteran-owned sportfishing out of Islamorada, founded in tribute to Bob Epstein: the Miami Herald fishing editor everyone called Poppa.</p>
         <div class="foot-social">
-          <a href="https://www.facebook.com/PoppaWahoo" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.facebook.com/ThePoppaWahooCollective" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
           <a href="https://www.instagram.com/poppawahoo" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="tel:+13053945350" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
-          <a href="mailto:davidepstein1969@icloud.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
-      </div>
-      <div class="foot-col">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="#legacy">The Legacy</a></li>
-          <li><a href="#fleet">The Fleet</a></li>
-          <li><a href="#trips">Trips &amp; Rates</a></li>
-          <li><a href="#captains">The Captains</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Trips</h4>
-        <ul>
-          <li><a href="#trips">Deep Sea Charters</a></li>
-          <li><a href="swordfish-charters-islamorada/">Overnight Swordfish</a></li>
-          <li><a href="shark-fishing-islamorada/">Evening Shark Trips</a></li>
-          <li><a href="islamorada-fishing-charter-cost/">What a Charter Costs</a></li>
-          <li><a href="fishing-charter-from-miami/">Day Trips from Miami</a></li>
-          <li><a href="https://crossfiber.github.io/captain-key-largo/">Captain Key Largo</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Target Species</h4>
-        <ul>
-          <li><a href="wahoo-fishing-islamorada/">Wahoo</a></li>
-          <li><a href="mahi-mahi-fishing-islamorada/">Mahi Mahi</a></li>
-          <li><a href="sailfish-charters-islamorada/">Sailfish</a></li>
-          <li><a href="blackfin-tuna-islamorada/">Blackfin Tuna</a></li>
-          <li><a href="yellowtail-snapper-islamorada/">Yellowtail Snapper</a></li>
-          <li><a href="islamorada-fishing-seasons/">Season Calendar</a></li>
-        </ul>
       </div>
       <div class="foot-col">
         <h4>Contact</h4>
@@ -988,7 +975,7 @@ body.modal-open{overflow:hidden}
         </address>
       </div>
     </div>
-    <div class="foot-dir"><div><h4>From your resort</h4><ul><li><a href="fishing-charter-near-postcard-inn/">Postcard Inn</a></li><li><a href="fishing-charter-near-cheeca-lodge/">Cheeca Lodge</a></li><li><a href="fishing-charter-near-islander-resort/">Islander Resort</a></li><li><a href="fishing-charter-near-hawks-cay/">Hawks Cay</a></li><li><a href="bachelor-party-charter-islamorada/">Bachelor Parties</a></li><li><a href="corporate-fishing-charters-islamorada/">Corporate Days</a></li></ul></div><div><h4>The family</h4><ul><li><a href="captains/">The Captains</a></li><li><a href="bob-epstein/">The Bob Epstein Legacy</a></li><li><a href="reviews/">Reviews</a></li><li><a href="gallery/">Gallery</a></li></ul></div><div><h4>Month by month</h4><ul><li><a href="islamorada-fishing-in-january/">January</a></li><li><a href="islamorada-fishing-in-february/">February</a></li><li><a href="islamorada-fishing-in-march/">March</a></li><li><a href="islamorada-fishing-in-april/">April</a></li><li><a href="islamorada-fishing-in-may/">May</a></li><li><a href="islamorada-fishing-in-june/">June</a></li><li><a href="islamorada-fishing-in-july/">July</a></li><li><a href="islamorada-fishing-in-august/">August</a></li><li><a href="islamorada-fishing-in-september/">September</a></li><li><a href="islamorada-fishing-in-october/">October</a></li><li><a href="islamorada-fishing-in-november/">November</a></li><li><a href="islamorada-fishing-in-december/">December</a></li></ul></div><div><h4>The trips</h4><ul><li><a href="deep-sea-fishing-islamorada/">Deep Sea Charters</a></li><li><a href="half-day-fishing-charter-islamorada/">Half Day Trips</a></li><li><a href="nearshore-fishing-islamorada/">Nearshore &amp; Reef</a></li><li><a href="sunset-cruise-islamorada/">Sunset Cruise</a></li><li><a href="sandbar-boat-trip-islamorada/">Sandbar Trips</a></li><li><a href="family-fishing-charters-islamorada/">Family Charters</a></li></ul></div><div><h4>The boats</h4><ul><li><a href="poppa-wahoo-55-hatteras/">Poppa Wahoo, 55' Hatteras</a></li><li><a href="poppa-wahoo-too-53-hatteras/">Poppa Wahoo Too, 53' Hatteras</a></li><li><a href="poppa-bay-25-sea-hunt/">Poppa Bay, 25' Sea Hunt</a></li><li><a href="poppa-toon-23-barletta/">Poppa Toon, 23' Barletta</a></li></ul></div><div><h4>Offshore species</h4><ul><li><a href="wahoo-fishing-islamorada/">Wahoo</a></li><li><a href="mahi-mahi-fishing-islamorada/">Mahi Mahi</a></li><li><a href="sailfish-charters-islamorada/">Sailfish</a></li><li><a href="swordfish-charters-islamorada/">Swordfish</a></li><li><a href="blackfin-tuna-islamorada/">Blackfin Tuna</a></li><li><a href="blue-marlin-islamorada/">Blue Marlin</a></li></ul></div><div><h4>Reef &amp; bottom</h4><ul><li><a href="king-mackerel-islamorada/">King Mackerel</a></li><li><a href="amberjack-fishing-islamorada/">Amberjack</a></li><li><a href="gag-grouper-islamorada/">Gag Grouper</a></li><li><a href="mutton-snapper-islamorada/">Mutton Snapper</a></li><li><a href="yellowtail-snapper-islamorada/">Yellowtail Snapper</a></li><li><a href="shark-fishing-islamorada/">Sharks</a></li></ul></div><div><h4>Plan your trip</h4><ul><li><a href="islamorada-fishing-charter-cost/">What a Charter Costs</a></li><li><a href="islamorada-fishing-seasons/">Season Calendar</a></li><li><a href="fishing-charter-from-miami/">From Miami</a></li><li><a href="fishing-charter-from-fort-lauderdale/">From Fort Lauderdale</a></li><li><a href="marathon-fishing-charters/">Near Marathon</a></li><li><a href="https://crossfiber.github.io/captain-key-largo/">Captain Key Largo</a></li></ul></div></div>
+    <div class="foot-dir"><div><h4>Explore</h4><ul><li><a href="#legacy">The Legacy</a></li><li><a href="#fleet">The Fleet</a></li><li><a href="#trips">Trips &amp; Rates</a></li><li><a href="captains/">The Captains</a></li><li><a href="bob-epstein/">The Bob Epstein Story</a></li><li><a href="reviews/">Reviews</a></li><li><a href="gallery/">Gallery</a></li><li><a href="#faq">FAQ</a></li></ul></div><div><h4>The boats</h4><ul><li><a href="poppa-wahoo-55-hatteras/">Poppa Wahoo, 55' Hatteras</a></li><li><a href="poppa-wahoo-too-53-hatteras/">Poppa Wahoo Too, 53' Hatteras</a></li><li><a href="poppa-bay-25-sea-hunt/">Poppa Bay, 25' Sea Hunt</a></li><li><a href="poppa-toon-23-barletta/">Poppa Toon, 23' Barletta</a></li></ul></div><div><h4>The trips</h4><ul><li><a href="deep-sea-fishing-islamorada/">Deep Sea Charters</a></li><li><a href="half-day-fishing-charter-islamorada/">Half Day Trips</a></li><li><a href="nearshore-fishing-islamorada/">Nearshore &amp; Reef</a></li><li><a href="swordfish-charters-islamorada/">Overnight Swordfish</a></li><li><a href="shark-fishing-islamorada/">Evening Shark Trips</a></li><li><a href="sunset-cruise-islamorada/">Sunset Cruise</a></li><li><a href="sandbar-boat-trip-islamorada/">Sandbar Trips</a></li><li><a href="family-fishing-charters-islamorada/">Family Charters</a></li><li><a href="bachelor-party-charter-islamorada/">Bachelor Parties</a></li><li><a href="corporate-fishing-charters-islamorada/">Corporate Days</a></li></ul></div><div><h4>Target species</h4><ul><li><a href="wahoo-fishing-islamorada/">Wahoo</a></li><li><a href="mahi-mahi-fishing-islamorada/">Mahi Mahi</a></li><li><a href="sailfish-charters-islamorada/">Sailfish</a></li><li><a href="swordfish-charters-islamorada/">Swordfish</a></li><li><a href="blue-marlin-islamorada/">Blue Marlin</a></li><li><a href="blackfin-tuna-islamorada/">Blackfin Tuna</a></li><li><a href="king-mackerel-islamorada/">King Mackerel</a></li><li><a href="amberjack-fishing-islamorada/">Amberjack</a></li><li><a href="gag-grouper-islamorada/">Gag Grouper</a></li><li><a href="mutton-snapper-islamorada/">Mutton Snapper</a></li><li><a href="yellowtail-snapper-islamorada/">Yellowtail Snapper</a></li><li><a href="shark-fishing-islamorada/">Sharks</a></li></ul></div><div><h4>Plan your trip</h4><ul><li><a href="islamorada-fishing-charter-cost/">What a Charter Costs</a></li><li><a href="islamorada-fishing-seasons/">Season Calendar</a></li><li><a href="fishing-charter-from-miami/">From Miami</a></li><li><a href="fishing-charter-from-fort-lauderdale/">From Fort Lauderdale</a></li><li><a href="marathon-fishing-charters/">Near Marathon</a></li><li><a href="fishing-charter-near-postcard-inn/">Postcard Inn</a></li><li><a href="fishing-charter-near-cheeca-lodge/">Cheeca Lodge</a></li><li><a href="fishing-charter-near-islander-resort/">Islander Resort</a></li><li><a href="fishing-charter-near-hawks-cay/">Hawks Cay</a></li><li><a href="https://crossfiber.github.io/captain-key-largo/">Captain Key Largo</a></li></ul></div><div><h4>Month by month</h4><ul class="foot-months"><li><a href="islamorada-fishing-in-january/">Jan</a></li><li><a href="islamorada-fishing-in-february/">Feb</a></li><li><a href="islamorada-fishing-in-march/">Mar</a></li><li><a href="islamorada-fishing-in-april/">Apr</a></li><li><a href="islamorada-fishing-in-may/">May</a></li><li><a href="islamorada-fishing-in-june/">Jun</a></li><li><a href="islamorada-fishing-in-july/">Jul</a></li><li><a href="islamorada-fishing-in-august/">Aug</a></li><li><a href="islamorada-fishing-in-september/">Sep</a></li><li><a href="islamorada-fishing-in-october/">Oct</a></li><li><a href="islamorada-fishing-in-november/">Nov</a></li><li><a href="islamorada-fishing-in-december/">Dec</a></li></ul></div></div>
     <div class="foot-bottom">
       <div class="fb-copy">&copy; 2026 The Poppa Wahoo Collective. Islamorada, FL.</div>
       <div class="fb-row">
@@ -1089,7 +1076,7 @@ body.modal-open{overflow:hidden}
     {"@type":"Offer","price":"575","priceCurrency":"USD","itemOffered":{"@type":"Service","name":"Islamorada Sunset Cruise","description":"2 hour sunset cruise on the 23 foot Barletta tritoon Poppa Toon."}},
     {"@type":"Offer","price":"800","priceCurrency":"USD","itemOffered":{"@type":"Service","name":"Islamorada Sandbar Cruise","description":"Sandbar cruise on the Poppa Toon tritoon."}}
   ]},
-  "sameAs":["https://www.facebook.com/PoppaWahoo","https://www.instagram.com/poppawahoo","https://fishingbooker.com/charters/view/41824"]
+  "sameAs":["https://www.facebook.com/ThePoppaWahooCollective","https://www.instagram.com/poppawahoo","https://fishingbooker.com/charters/view/41824"]
 }
 </script>
 <script type="application/ld+json">
@@ -1121,7 +1108,20 @@ body.modal-open{overflow:hidden}
 <script>
 if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
 (function(){
-  if (window.location.hash) { history.replaceState(null, '', window.location.pathname); }
+  if (window.location.hash && window.location.hash.length > 1) {
+    var landTarget = document.querySelector(window.location.hash);
+    history.replaceState(null, '', window.location.pathname);
+    if (landTarget) {
+      var landStop = false;
+      ['wheel','touchstart','keydown'].forEach(function(ev){ window.addEventListener(ev, function(){ landStop = true; }, {passive:true, once:true}); });
+      landTarget.scrollIntoView({behavior:'auto',block:'start'});
+      var landTries = 0;
+      var landIv = setInterval(function(){
+        if (landStop || ++landTries > 10) { clearInterval(landIv); return; }
+        landTarget.scrollIntoView({behavior:'auto',block:'start'});
+      }, 140);
+    }
+  }
   var hamburger=document.getElementById('hamburger');
   var drawer=document.getElementById('navDrawer');
   var overlay=document.getElementById('navOverlay');
