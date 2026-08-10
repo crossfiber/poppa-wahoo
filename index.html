@@ -53,6 +53,7 @@
   --line:rgba(24,35,56,0.14);--line-soft:rgba(24,35,56,0.08);
   --line-d:rgba(248,245,238,0.18);--line-d-soft:rgba(248,245,238,0.10);
   --nav-h:76px;--nav-h-sm:62px;
+  --marlin:#3364AC;--marlin-lite:#8FA9D8;
 }
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 20px);overflow-x:clip}
 @media(max-width:768px){html{scroll-padding-top:calc(var(--nav-h-sm) + 20px)}}
@@ -105,7 +106,7 @@ nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h)
 .logo-pill img{height:30px;width:auto;display:block}
 .drawer-close{background:none;border:none;font-size:1.4rem;color:var(--ivory);cursor:pointer;width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center}
 .drawer-close:hover{color:var(--gold-lite)}
-.drawer-eyebrow{padding:20px 26px 4px;font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lite)}
+.drawer-eyebrow{padding:20px 26px 4px;font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--marlin-lite)}
 .drawer-links{display:flex;flex-direction:column;flex:1;overflow-y:auto;min-height:0;padding:2px 0 8px}
 .drawer-links a{padding:16px 26px;color:var(--ivory);font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.5rem;line-height:1.15;transition:color .2s,background .2s,padding-left .2s}
 .drawer-links a:hover{color:var(--gold-lite);background:rgba(248,245,238,0.05);padding-left:34px}
@@ -123,7 +124,7 @@ body.drawer-open .mobile-actions{visibility:hidden}
 .hero::before{content:'';position:absolute;inset:0;background-image:url('assets/hatteras-beauty.jpg');background-size:cover;background-position:center 38%;z-index:0}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,27,51,0.62) 0%,rgba(13,27,51,0.18) 34%,rgba(13,27,51,0.44) 64%,rgba(13,27,51,0.93) 100%);z-index:1}
 .hero-inner{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:0 40px;color:#fff}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:0.78rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold-lite);margin-bottom:22px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:0.78rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--marlin-lite);margin-bottom:22px}
 .hero h1{font-size:clamp(2.3rem,4.9vw,4.1rem);font-weight:600;color:#fff;max-width:21ch;margin-bottom:20px}
 .hero h1 em{font-style:italic;font-weight:500;color:var(--gold-lite)}
 .hero .lede{font-size:clamp(1.02rem,1.5vw,1.22rem);color:rgba(255,255,255,0.88);max-width:58ch;margin-bottom:30px;line-height:1.55}
@@ -136,7 +137,7 @@ body.drawer-open .mobile-actions{visibility:hidden}
   .hero{padding:calc(var(--nav-h-sm) + 26px) 0 96px;min-height:0;align-items:flex-start;background:var(--ivory)}
   .hero::before,.hero::after{display:none}
   .hero-inner{padding:0 22px;color:var(--text)}
-  .hero-eyebrow{color:var(--gold-deep);margin-bottom:16px}
+  .hero-eyebrow{color:var(--marlin);margin-bottom:16px}
   .hero h1{color:var(--navy);font-size:clamp(1.85rem,7.6vw,2.5rem);margin-bottom:14px}
   .hero h1 em{color:var(--royal)}
   .hero .lede{color:var(--text-soft);font-size:1rem;margin-bottom:22px}
@@ -185,32 +186,11 @@ body.drawer-open .mobile-actions{visibility:hidden}
 @media(max-width:920px){.legacy{padding:64px 0}.legacy-quote{margin-bottom:32px}.legacy-grid{grid-template-columns:1fr;gap:30px}.legacy-facts{flex-direction:column}.legacy-facts .lf{padding:13px 0}.legacy-facts .lf:not(:first-child){padding-left:0;border-left:none;border-top:1px solid var(--line-soft)}}
 
 /* FLAGSHIP full-bleed */
-.flagship{position:relative;background:var(--navy);color:var(--ivory)}
-.flagship::before{content:'';position:absolute;inset:0;background-image:url('assets/deep-sea.jpg');background-size:cover;background-position:center 55%}
-.flagship::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,27,51,0.92) 0%,rgba(13,27,51,0.72) 42%,rgba(13,27,51,0.18) 100%)}
-.flagship-inner{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:110px 40px}
-.flagship .kicker{color:var(--gold-lite)}
-.flagship .kicker i{color:var(--gold-lite)}
-.flagship h2{font-size:clamp(2rem,4vw,3.3rem);color:#fff;max-width:17ch;margin-bottom:16px}
-.flagship h2 em{font-style:italic;font-weight:500;color:var(--gold-lite)}
-.flagship p{font-size:1.05rem;color:rgba(248,245,238,0.85);max-width:54ch;line-height:1.7;margin-bottom:26px}
-.spec-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 44px;margin:0 0 32px;max-width:660px}
-.spec-list li{display:flex;gap:13px;align-items:center;padding:11px 0;border-bottom:1px solid rgba(248,245,238,0.16);font-size:0.95rem;font-weight:500;color:rgba(248,245,238,0.94)}
-.spec-list li::before{content:'';width:14px;height:2px;background:var(--gold);flex-shrink:0}
-.spec-list i{color:var(--gold-lite);font-size:0.88em;width:18px;flex-shrink:0;text-align:center}
-@media(max-width:620px){.spec-list{grid-template-columns:1fr;gap:0}}
-.fleet-index{display:flex;flex-wrap:wrap;gap:10px;margin-top:38px}
-.fleet-index a,.fleet-index .fi-cur{font-family:'Figtree',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.05em;text-transform:uppercase;padding:10px 16px;border:1px solid rgba(248,245,238,0.35);color:var(--ivory);border-radius:999px;transition:border-color .2s,color .2s}
-.fleet-index .fi-cur{background:var(--gold);border-color:var(--gold);color:var(--navy)}
-.fleet-index a:hover{border-color:var(--gold-lite);color:var(--gold-lite)}
-@media(max-width:768px){.flagship-inner{padding:60px 22px}.flagship p{font-size:0.98rem}.fleet-index{margin-top:28px;gap:8px}.fleet-index a,.fleet-index .fi-cur{font-size:0.7rem;padding:8px 12px}}
-
-/* FLEET CARDS */
 .fleet{padding:96px 0 104px;background:var(--ivory-2)}
 .fleet-head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:44px}
 .fleet-head h2{font-size:clamp(1.9rem,3.6vw,3rem);color:var(--navy);max-width:18ch}
 .fleet-head p{font-size:0.98rem;color:var(--text-soft);max-width:36ch;line-height:1.6;padding-bottom:6px}
-.fleet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.fleet-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
 .boat-card{background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
 .boat-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(24,35,56,0.12)}
 .bc-photo{height:250px;background-size:cover;background-position:center}
@@ -218,8 +198,9 @@ body.drawer-open .mobile-actions{visibility:hidden}
 .bc-body .bc-role{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:7px}
 .bc-body h3{font-size:1.45rem;color:var(--navy);margin-bottom:9px}
 .bc-body p{font-size:0.94rem;color:var(--text-soft);line-height:1.6;flex:1}
-.bc-body .tlink{margin-top:18px}
-@media(max-width:1000px){.fleet{padding:58px 0 64px}.fleet-head{grid-template-columns:1fr;gap:8px;margin-bottom:28px}.fleet-grid{grid-template-columns:1fr 1fr}.boat-card:last-child{grid-column:1/-1}.bc-photo{height:200px}}
+.bc-links{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px}
+.bc-links .tlink{margin:0}
+@media(max-width:1000px){.fleet{padding:58px 0 64px}.fleet-head{grid-template-columns:1fr;gap:8px;margin-bottom:28px}.bc-photo{height:200px}}
 @media(max-width:560px){.fleet-grid{grid-template-columns:1fr 1fr;gap:12px}.bc-photo{height:150px}.bc-body{padding:14px 14px 14px}.bc-body h3{font-size:1.02rem}.bc-body p{font-size:0.82rem}.bc-body .tlink{font-size:0.7rem;margin-top:12px}}
 
 /* TRIPS & RATES */
@@ -341,14 +322,13 @@ body.drawer-open .mobile-actions{visibility:hidden}
 
 /* CONTACT */
 .contact{padding:104px 0;background:var(--navy);color:var(--ivory)}
-.contact .kicker{color:var(--gold-lite)}
-.contact .kicker i{color:var(--gold-lite)}
+.contact .kicker{color:var(--marlin-lite)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .contact-left h2{font-size:clamp(1.9rem,3.4vw,2.8rem);color:#fff;margin-bottom:14px}
 .contact-left h2 em{font-style:italic;font-weight:500;color:var(--gold-lite)}
 .contact-left .csub{color:rgba(248,245,238,0.78);font-size:1.02rem;line-height:1.6;margin-bottom:30px;max-width:46ch}
 .field{margin-bottom:22px}
-.field label{display:block;font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-lite);margin-bottom:9px}
+.field label{display:block;font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--marlin-lite);margin-bottom:9px}
 .field input,.field select,.field textarea{width:100%;padding:11px 2px;border:none;border-bottom:1.5px solid rgba(248,245,238,0.3);background:transparent;color:#fff;font-family:'Figtree',sans-serif;font-size:1.02rem;transition:border-color .2s}
 .field input::placeholder,.field textarea::placeholder{color:rgba(248,245,238,0.4)}
 .field select{color:#fff}
@@ -365,35 +345,36 @@ body.drawer-open .mobile-actions{visibility:hidden}
 .form-status.success{background:rgba(217,188,114,0.12);color:#EFE0B8}
 .form-status.error{background:rgba(224,138,138,0.12);color:#F2C4B8;border-left-color:#E08A8A}
 .contact-right{border-left:1px solid var(--line-d);padding-left:56px}
-.contact .cl{font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-lite);margin-bottom:12px}
-.crow{display:flex;gap:15px;align-items:baseline;padding:9px 0;font-size:1rem;color:rgba(248,245,238,0.88);line-height:1.55}
-.crow i{color:var(--gold-lite);width:18px;text-align:center;flex-shrink:0}
+.contact .cl{font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--marlin-lite);margin-bottom:12px}
+.crow{padding:8px 0;font-size:1rem;color:rgba(248,245,238,0.88);line-height:1.55}
 .crow a{font-weight:700;color:#fff}
-.crow a:hover{color:var(--gold-lite)}
+.crow a:hover{color:var(--marlin-lite)}
 .c-block{padding-bottom:22px;border-bottom:1px solid var(--line-d-soft);margin-bottom:24px}
 .c-note{font-size:0.94rem;color:rgba(248,245,238,0.64);line-height:1.6}
-.social-row{display:flex;gap:10px;margin-top:14px}
-.social-row a{width:42px;height:42px;border:1px solid var(--line-d);color:var(--ivory);display:inline-flex;align-items:center;justify-content:center;font-size:1rem;transition:all .2s;border-radius:2px}
-.social-row a:hover{background:var(--gold);color:var(--navy);border-color:var(--gold);transform:translateY(-2px)}
+.social-line{margin-top:14px;font-size:0.95rem;display:flex;gap:10px;color:rgba(248,245,238,0.4)}
+.social-line a{font-weight:700;color:#fff;transition:color .2s}
+.social-line a:hover{color:var(--marlin-lite)}
 @media(max-width:900px){.contact{padding:60px 0}.contact-grid{grid-template-columns:1fr;gap:38px}.contact-right{border-left:none;border-top:1px solid var(--line-d);padding-left:0;padding-top:26px}}
 @media(max-width:460px){.frow{grid-template-columns:1fr;gap:0}}
 
 /* BOOKING WIZARD */
 .bw-prog{display:none}
 form.bw-on .bw-prog{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.bw-st{font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-lite)}
+.bw-st{font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--marlin-lite)}
 .bw-dots{display:flex;gap:7px}
 .bw-dots i{width:22px;height:3px;background:rgba(248,245,238,0.25);border-radius:2px;transition:background .3s}
 .bw-dots i.on{background:var(--gold)}
 form.bw-on .bw-step{display:none}
 form.bw-on .bw-step.on{display:block}
-.bw-tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.bw-tile{position:relative;border:1px solid rgba(248,245,238,0.28);border-radius:2px;padding:12px 14px;cursor:pointer;transition:border-color .2s,background .2s}
-.bw-tile input{position:absolute;opacity:0;pointer-events:none}
-.bw-tile b{display:block;font-weight:600;font-size:0.94rem;color:var(--ivory);line-height:1.3;margin-bottom:3px}
-.bw-tile em{font-style:normal;font-size:0.78rem;font-weight:700;letter-spacing:0.04em;color:var(--gold-lite)}
-.bw-tile:hover{border-color:var(--gold-lite)}
-.bw-tile.sel{border-color:var(--gold);background:rgba(194,154,59,0.16)}
+.bw-rows{border-top:1px solid rgba(248,245,238,0.16)}
+.field label.bw-row{position:relative;display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding:15px 4px 15px 14px;margin:0;border-bottom:1px solid rgba(248,245,238,0.16);border-left:3px solid transparent;cursor:pointer;text-transform:none;letter-spacing:normal;font-size:1rem;color:var(--ivory);font-weight:400;transition:border-color .2s,background .2s,padding-left .2s}
+.bw-row input{position:absolute;opacity:0;pointer-events:none}
+.bw-row b{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.08rem;color:var(--ivory);line-height:1.3}
+.bw-row em{font-style:normal;font-weight:600;font-size:0.92rem;color:rgba(248,245,238,0.65);white-space:nowrap}
+.bw-row:hover{background:rgba(248,245,238,0.04)}
+.bw-row.sel{border-left-color:var(--gold);background:rgba(248,245,238,0.05)}
+.bw-row.sel b{color:#fff}
+.bw-row.sel em{color:var(--gold-lite)}
 .bw-nav{display:flex;gap:12px;margin-top:20px}
 .bw-ghost{background:transparent;border:1.5px solid rgba(248,245,238,0.4);color:var(--ivory);box-shadow:none}
 .bw-ghost:hover{background:transparent;border-color:var(--gold-lite);color:var(--gold-lite)}
@@ -402,7 +383,6 @@ form.bw-on .bw-back{display:inline-flex}
 .bw-call{margin-top:16px;font-size:0.88rem;color:rgba(248,245,238,0.65)}
 .bw-call a{color:var(--gold-lite);font-weight:700}
 .field .opt{font-weight:600;font-size:0.68rem;letter-spacing:0.08em;color:rgba(248,245,238,0.5);margin-left:6px;text-transform:none}
-@media(max-width:420px){.bw-tile b{font-size:0.88rem}}
 /* FOOTER */
 footer{background:#081224;color:rgba(248,245,238,0.72);padding:62px 0 28px}
 .f-cols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:34px 30px;padding-bottom:30px;border-bottom:1px solid var(--line-d-soft)}
@@ -413,9 +393,7 @@ footer{background:#081224;color:rgba(248,245,238,0.72);padding:62px 0 28px}
 .fb-contact{font-style:normal;font-size:0.92rem;line-height:1.85;margin-bottom:14px}
 .fb-contact a{font-weight:600;color:#fff}
 .fb-contact a:hover{color:var(--gold-lite)}
-.foot-social{display:flex;gap:18px}
-.foot-social a{color:rgba(248,245,238,0.72);font-size:1.05rem;transition:color .2s}
-.foot-social a:hover{color:var(--gold-lite)}
+
 .f-grp h4{font-family:'Figtree',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(248,245,238,0.55);margin-bottom:11px}
 .f-grp ul{list-style:none}
 .f-grp li{padding:4px 0}
@@ -435,7 +413,7 @@ footer{background:#081224;color:rgba(248,245,238,0.72);padding:62px 0 28px}
 .built-by:hover img{opacity:1}
 .foot-signoff{max-width:1240px;margin:0 auto 48px;padding:0 0 42px;border-bottom:1px solid var(--line-d-soft)}
 .foot-signoff p{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(1.4rem,2.8vw,2.2rem);line-height:1.3;color:#fff;max-width:28ch}
-.foot-signoff p b{font-style:italic;font-weight:600;color:var(--gold-lite)}
+.foot-signoff p b{font-style:italic;font-weight:600;color:var(--marlin-lite)}
 @media(max-width:760px){.foot-signoff{margin-bottom:32px;padding-bottom:28px}}
 
 /* BOOKING MODAL */
@@ -555,7 +533,7 @@ body.modal-open{overflow:hidden}
     <h1>Islamorada charters from the family that <em>wrote the book</em> on Keys fishing.</h1>
     <p class="lede">Four boats, one family. Deep sea trips aboard a 55 foot Hatteras, overnight swordfishing, evening shark runs, and sunset cruises, all out of Islamorada. <span class="m-trim">Founded by the sons of Bob Epstein, the Miami Herald's legendary fishing editor. </span>Real rates below. No surprises at the dock.</p>
     <div class="hero-ctas">
-      <a href="#contact" class="btn" data-book=""><i class="fa-solid fa-calendar-check"></i> Book Your Trip</a>
+      <a href="#contact" class="btn" data-book="">Book Your Trip</a>
       <a href="#fleet" class="btn btn-ghost">View the Boats</a>
       <a href="tel:+13053945350" class="hero-call"><i class="fa-solid fa-phone-volume"></i> (305) 394-5350</a>
     </div>
@@ -600,44 +578,29 @@ body.modal-open{overflow:hidden}
 </section>
 
 <!-- FLAGSHIP -->
-<section id="fleet" class="flagship">
-  <div class="flagship-inner">
-    <div class="kicker">The Fleet &middot; Four Boats</div>
-    <h2>Poppa Wahoo, the <em>55 foot Hatteras</em> that leads the family.</h2>
-    <p>A classic Hatteras sportfisher rebuilt for serious offshore work and comfortable enough for a family day. Twin 1250 HP diesels cruise at 40 knots, so you spend the day fishing instead of riding.</p>
-    <ul class="spec-list">
-      <li>Twin 1250 HP diesels, 40 knot cruise</li>
-      <li>Up to 6 guests</li>
-      <li>A/C salon, beds &amp; galley</li>
-      <li>Fighting chair &amp; flybridge</li>
-      <li>Starlink, radar &amp; sonar</li>
-      <li>Tuna tubes &amp; live wells</li>
-    </ul>
-    <a href="#" class="btn" data-book="Deep sea half day ($1,475)"><i class="fa-solid fa-calendar-check"></i> Book the Poppa Wahoo</a> &nbsp; <a href="poppa-wahoo-55-hatteras/" class="btn btn-ghost">Full Specs &amp; Story</a>
-    <div class="fleet-index" aria-label="The four boats of the fleet">
-      <span class="fi-cur">1 of 4 &middot; Poppa Wahoo &middot; 55' Hatteras</span>
-      <a href="#boat-too">Wahoo Too &middot; 53'</a>
-      <a href="#boat-bay">Poppa Bay &middot; 25'</a>
-      <a href="#boat-toon">Poppa 'Toon &middot; 23'</a>
-    </div>
-  </div>
-</section>
-
-<!-- FLEET CARDS -->
-<section class="fleet">
+<section id="fleet" class="fleet">
   <div class="wrap">
     <div class="fleet-head">
-      <h2>Three more boats, <br>each with a different job.</h2>
-      <p>The right hull for your water: a second big Hatteras, a nimble bay boat, and the party barge.</p>
+      <h2>Four boats, <br>one family dock.</h2>
+      <p>Two big Hatteras sportfishers, a nimble bay boat, and the party barge. Every trip runs on the right hull for the water.</p>
     </div>
     <div class="fleet-grid">
+      <article class="boat-card" id="boat-wahoo">
+        <div class="bc-photo" style="background-image:url('assets/hatteras-beauty.jpg');background-position:center 60%" role="img" aria-label="Poppa Wahoo, the 55 foot Hatteras sportfisher"></div>
+        <div class="bc-body">
+          <div class="bc-role">55' Hatteras Sportfisher</div>
+          <h3>Poppa Wahoo</h3>
+          <p>The boat the family is named for. Twin 1250 HP diesels at a 40 knot cruise, A/C salon, fighting chair, and room for 6 to fish serious water in comfort.</p>
+          <div class="bc-links"><a href="#contact" class="tlink" data-book="Deep sea half day ($1,475)">Book the Wahoo <i class="fa-solid fa-arrow-right-long"></i></a><a href="poppa-wahoo-55-hatteras/" class="tlink">Meet the Wahoo <i class="fa-solid fa-arrow-right-long"></i></a></div>
+        </div>
+      </article>
       <article class="boat-card" id="boat-too">
         <div class="bc-photo" style="background-image:url('assets/wahoo-too.jpg');background-position:center 55%" role="img" aria-label="Poppa Wahoo Too, the 53 foot Hatteras with wahoo stripe hull wrap"></div>
         <div class="bc-body">
           <div class="bc-role">53' Hatteras Sportfisher</div>
           <h3>Poppa Wahoo Too</h3>
           <p>The sister ship, wearing wahoo stripes down her hull. Same offshore program, same 6 guest comfort, twice the fleet's reach on busy weeks.</p>
-          <a href="#contact" class="tlink" data-book="Deep sea three-quarter or full day ($1,975 / $2,475)">Book the Too <i class="fa-solid fa-arrow-right-long"></i></a> &nbsp; <a href="poppa-wahoo-too-53-hatteras/" class="tlink">Meet the Too <i class="fa-solid fa-arrow-right-long"></i></a>
+          <div class="bc-links"><a href="#contact" class="tlink" data-book="Deep sea three-quarter or full day ($1,975 / $2,475)">Book the Too <i class="fa-solid fa-arrow-right-long"></i></a><a href="poppa-wahoo-too-53-hatteras/" class="tlink">Meet the Too <i class="fa-solid fa-arrow-right-long"></i></a></div>
         </div>
       </article>
       <article class="boat-card" id="boat-bay">
@@ -646,7 +609,7 @@ body.modal-open{overflow:hidden}
           <div class="bc-role">25' Sea Hunt Bay Boat</div>
           <h3>Poppa Bay</h3>
           <p>A 2022 Sea Hunt BXSF with a 300 HP Yamaha. Reef, patch, and nearshore trips for up to 4 anglers, in water the big boats cannot touch.</p>
-          <a href="#contact" class="tlink" data-book="Nearshore on Poppa Bay (from $1,050)">Book the Bay <i class="fa-solid fa-arrow-right-long"></i></a> &nbsp; <a href="poppa-bay-25-sea-hunt/" class="tlink">Meet the Bay <i class="fa-solid fa-arrow-right-long"></i></a>
+          <div class="bc-links"><a href="#contact" class="tlink" data-book="Nearshore on Poppa Bay (from $1,050)">Book the Bay <i class="fa-solid fa-arrow-right-long"></i></a><a href="poppa-bay-25-sea-hunt/" class="tlink">Meet the Bay <i class="fa-solid fa-arrow-right-long"></i></a></div>
         </div>
       </article>
       <article class="boat-card" id="boat-toon">
@@ -655,7 +618,7 @@ body.modal-open{overflow:hidden}
           <div class="bc-role">23' Barletta Tritoon</div>
           <h3>Poppa Toon</h3>
           <p>The easy button: sunset cruises, sandbar afternoons, and slow evenings on flat water when the day calls for drinks instead of drag.</p>
-          <a href="#contact" class="tlink" data-book="Sunset cruise ($575)">Book the Toon <i class="fa-solid fa-arrow-right-long"></i></a> &nbsp; <a href="poppa-toon-23-barletta/" class="tlink">Meet the Toon <i class="fa-solid fa-arrow-right-long"></i></a>
+          <div class="bc-links"><a href="#contact" class="tlink" data-book="Sunset cruise ($575)">Book the Toon <i class="fa-solid fa-arrow-right-long"></i></a><a href="poppa-toon-23-barletta/" class="tlink">Meet the Toon <i class="fa-solid fa-arrow-right-long"></i></a></div>
         </div>
       </article>
     </div>
@@ -669,7 +632,7 @@ body.modal-open{overflow:hidden}
       <h2>Trips and rates, <em>posted in plain sight.</em></h2>
       <p class="incl"><b>Every fishing trip includes</b> the boat, fuel, captain and mate, rods, tackle, live bait, fishing licenses, bottled water, snacks, and catch cleaning at the dock.</p>
     </div>
-    <div class="trips-compact"><a class="tc-tile" href="half-day-fishing-charter-islamorada/"><span class="tc-name">Deep Sea Half Day</span><span class="tc-price">$1,475</span><span class="tc-meta">4 hrs</span></a><a class="tc-tile" href="deep-sea-fishing-islamorada/"><span class="tc-name">Three-Quarter &amp; Full Day</span><span class="tc-price">$1,975 / $2,475</span><span class="tc-meta">6 or 8 hrs</span></a><a class="tc-tile" href="shark-fishing-islamorada/"><span class="tc-name">Evening Shark Trip</span><span class="tc-price">$1,000</span><span class="tc-meta">3 hrs &middot; 5 pm</span></a><a class="tc-tile" href="swordfish-charters-islamorada/"><span class="tc-name">Overnight Swordfish</span><span class="tc-price">$2,700</span><span class="tc-meta">Overnight</span></a><a class="tc-tile" href="nearshore-fishing-islamorada/"><span class="tc-name">Nearshore on Poppa Bay</span><span class="tc-price">From $1,050</span><span class="tc-meta">Calm water</span></a><a class="tc-tile" href="sunset-cruise-islamorada/"><span class="tc-name">Sunset Cruise</span><span class="tc-price">$575</span><span class="tc-meta">2 hrs</span></a><a class="tc-tile" href="sandbar-boat-trip-islamorada/"><span class="tc-name">Sandbar Cruise</span><span class="tc-price">$800</span><span class="tc-meta">3 hrs</span></a><a class="tc-book" href="#" data-book=""><i class="fa-solid fa-calendar-check"></i> Book a Trip</a></div>
+    <div class="trips-compact"><a class="tc-tile" href="half-day-fishing-charter-islamorada/"><span class="tc-name">Deep Sea Half Day</span><span class="tc-price">$1,475</span><span class="tc-meta">4 hrs</span></a><a class="tc-tile" href="deep-sea-fishing-islamorada/"><span class="tc-name">Three-Quarter &amp; Full Day</span><span class="tc-price">$1,975 / $2,475</span><span class="tc-meta">6 or 8 hrs</span></a><a class="tc-tile" href="shark-fishing-islamorada/"><span class="tc-name">Evening Shark Trip</span><span class="tc-price">$1,000</span><span class="tc-meta">3 hrs &middot; 5 pm</span></a><a class="tc-tile" href="swordfish-charters-islamorada/"><span class="tc-name">Overnight Swordfish</span><span class="tc-price">$2,700</span><span class="tc-meta">Overnight</span></a><a class="tc-tile" href="nearshore-fishing-islamorada/"><span class="tc-name">Nearshore on Poppa Bay</span><span class="tc-price">From $1,050</span><span class="tc-meta">Calm water</span></a><a class="tc-tile" href="sunset-cruise-islamorada/"><span class="tc-name">Sunset Cruise</span><span class="tc-price">$575</span><span class="tc-meta">2 hrs</span></a><a class="tc-tile" href="sandbar-boat-trip-islamorada/"><span class="tc-name">Sandbar Cruise</span><span class="tc-price">$800</span><span class="tc-meta">3 hrs</span></a><a class="tc-book" href="#" data-book="">Book a Trip</a></div>
 
 
     <div class="trip-group">
@@ -896,7 +859,7 @@ body.modal-open{overflow:hidden}
   <div class="wrap">
     <div class="contact-grid">
       <div class="contact-left">
-        <div class="kicker"><i class="fa-solid fa-calendar-check"></i> Book a Trip</div>
+        <div class="kicker">Book a Trip</div>
         <h2>Pick your trip. <em>We'll hold the date.</em></h2>
         <p class="csub">Send your dates, group size, and the trip you want. A captain gets back to you directly to confirm the boat and the details.</p>
         <form id="bookForm" name="booking" method="POST" novalidate onsubmit="return submitForm(event)">
@@ -904,15 +867,15 @@ body.modal-open{overflow:hidden}
           <div class="bw-step" data-step="1">
             <div class="field" id="f-trip">
               <label>Which trip?</label>
-              <div class="bw-tiles">
-                <label class="bw-tile"><input type="radio" name="trip" value="Deep sea half day ($1,475)"><b>Deep sea half day</b><em>$1,475</em></label>
-                <label class="bw-tile"><input type="radio" name="trip" value="Deep sea three-quarter or full day ($1,975 / $2,475)"><b>Deep sea 3/4 or full day</b><em>$1,975 / $2,475</em></label>
-                <label class="bw-tile"><input type="radio" name="trip" value="Evening shark trip ($1,000)"><b>Evening shark trip</b><em>$1,000</em></label>
-                <label class="bw-tile"><input type="radio" name="trip" value="Overnight swordfish ($2,700)"><b>Overnight swordfish</b><em>$2,700</em></label>
-                <label class="bw-tile"><input type="radio" name="trip" value="Nearshore on Poppa Bay (from $1,050)"><b>Nearshore on Poppa Bay</b><em>from $1,050</em></label>
-                <label class="bw-tile"><input type="radio" name="trip" value="Sunset cruise ($575)"><b>Sunset cruise</b><em>$575</em></label>
-                <label class="bw-tile"><input type="radio" name="trip" value="Sandbar cruise ($800)"><b>Sandbar cruise</b><em>$800</em></label>
-                <label class="bw-tile"><input type="radio" name="trip" value="Bahamas / custom trip"><b>Bahamas / custom</b><em>Let's talk</em></label>
+              <div class="bw-rows">
+                <label class="bw-row"><input type="radio" name="trip" value="Deep sea half day ($1,475)"><b>Deep sea half day</b><em>$1,475</em></label>
+                <label class="bw-row"><input type="radio" name="trip" value="Deep sea three-quarter or full day ($1,975 / $2,475)"><b>Deep sea, three-quarter or full day</b><em>$1,975 / $2,475</em></label>
+                <label class="bw-row"><input type="radio" name="trip" value="Evening shark trip ($1,000)"><b>Evening shark trip</b><em>$1,000</em></label>
+                <label class="bw-row"><input type="radio" name="trip" value="Overnight swordfish ($2,700)"><b>Overnight swordfish</b><em>$2,700</em></label>
+                <label class="bw-row"><input type="radio" name="trip" value="Nearshore on Poppa Bay (from $1,050)"><b>Nearshore on the Poppa Bay</b><em>from $1,050</em></label>
+                <label class="bw-row"><input type="radio" name="trip" value="Sunset cruise ($575)"><b>Sunset cruise</b><em>$575</em></label>
+                <label class="bw-row"><input type="radio" name="trip" value="Sandbar cruise ($800)"><b>Sandbar cruise</b><em>$800</em></label>
+                <label class="bw-row"><input type="radio" name="trip" value="Bahamas / custom trip"><b>Bahamas or a custom trip</b><em>Let's talk</em></label>
               </div>
               <div class="msg">Tap a trip so the right captain answers.</div>
             </div>
@@ -949,7 +912,7 @@ body.modal-open{overflow:hidden}
               <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email">
               <div class="msg">That looks incomplete. Try something like you@email.com.</div>
             </div>
-            <div class="bw-nav"><button type="button" class="btn bw-ghost bw-back">Back</button><button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i> Request the Date</button></div>
+            <div class="bw-nav"><button type="button" class="btn bw-ghost bw-back">Back</button><button type="submit" class="btn">Request the Date</button></div>
           </div>
           <p class="bw-call">Rather talk it through? Call or text <a href="tel:+13053945350">(305) 394-5350</a>.</p>
           <div class="form-status" id="formStatus"></div>
@@ -958,19 +921,16 @@ body.modal-open{overflow:hidden}
       <div class="contact-right">
         <div class="c-block">
           <div class="cl">The dock</div>
-          <div class="crow"><i class="fa-solid fa-location-dot"></i><span>Three Waters Resort &amp; Marina<br>84001 Overseas Hwy, Islamorada, FL 33036</span></div>
-          <div class="crow"><i class="fa-solid fa-route"></i><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Three+Waters+Resort+and+Marina+84001+Overseas+Hwy+Islamorada+FL" target="_blank" rel="noopener">Get directions</a></span></div>
-          <div class="crow"><i class="fa-solid fa-water"></i><span>Nearshore trips depart Square Grouper, 80461 Overseas Hwy</span></div>
+          <div class="crow"><span>Three Waters Resort &amp; Marina<br>84001 Overseas Hwy, Islamorada, FL 33036</span></div>
+          <div class="crow"><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Three+Waters+Resort+and+Marina+84001+Overseas+Hwy+Islamorada+FL" target="_blank" rel="noopener">Get directions</a></span></div>
+          <div class="crow"><span>Nearshore trips depart Square Grouper, 80461 Overseas Hwy</span></div>
         </div>
         <div class="c-block">
           <div class="cl">Reach the fleet</div>
-          <div class="crow"><i class="fa-solid fa-phone-volume"></i><span>Call or text <a href="tel:+13053945350">(305) 394-5350</a></span></div>
-          <div class="crow"><i class="fa-solid fa-envelope-open-text"></i><span><a href="mailto:davidepstein1969@icloud.com">davidepstein1969@icloud.com</a></span></div>
-          <div class="crow"><i class="fa-solid fa-clock"></i><span>On the water daily, 5 am to 9 pm</span></div>
-          <div class="social-row">
-            <a href="https://www.facebook.com/ThePoppaWahooCollective" target="_blank" rel="noopener" aria-label="Poppa Wahoo on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/poppawahoo" target="_blank" rel="noopener" aria-label="Poppa Wahoo on Instagram"><i class="fa-brands fa-instagram"></i></a>
-          </div>
+          <div class="crow"><span>Call or text <a href="tel:+13053945350">(305) 394-5350</a></span></div>
+          <div class="crow"><span><a href="mailto:davidepstein1969@icloud.com">davidepstein1969@icloud.com</a></span></div>
+          <div class="crow"><span>On the water daily, 5 am to 9 pm</span></div>
+          <div class="social-line"><a href="https://www.facebook.com/ThePoppaWahooCollective" target="_blank" rel="noopener">Facebook</a><span aria-hidden="true">&middot;</span><a href="https://www.instagram.com/poppawahoo" target="_blank" rel="noopener">Instagram</a></div>
         </div>
         <p class="c-note">Boats and dates go fast in season, especially the overnight swordfish runs. If your dates are fixed, send them today and let the captains work out the rest with you.</p>
       </div>
@@ -993,10 +953,7 @@ body.modal-open{overflow:hidden}
           <a href="mailto:davidepstein1969@icloud.com">davidepstein1969@icloud.com</a><br>
           84001 Overseas Hwy, Islamorada, FL 33036
         </address>
-        <div class="foot-social">
-          <a href="https://www.facebook.com/ThePoppaWahooCollective" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://www.instagram.com/poppawahoo" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        </div>
+        <div class="social-line"><a href="https://www.facebook.com/ThePoppaWahooCollective" target="_blank" rel="noopener">Facebook</a><span aria-hidden="true">&middot;</span><a href="https://www.instagram.com/poppawahoo" target="_blank" rel="noopener">Instagram</a></div>
       </div>
       <div class="f-grp"><h4>Explore</h4><ul><li><a href="#legacy">The Legacy</a></li><li><a href="#fleet">The Fleet</a></li><li><a href="#trips">Trips &amp; Rates</a></li><li><a href="captains/">The Captains</a></li><li><a href="bob-epstein/">The Bob Epstein Story</a></li><li><a href="reviews/">Reviews</a></li><li><a href="gallery/">Gallery</a></li><li><a href="#faq">FAQ</a></li></ul></div><div class="f-grp"><h4>The boats</h4><ul><li><a href="poppa-wahoo-55-hatteras/">Poppa Wahoo, 55' Hatteras</a></li><li><a href="poppa-wahoo-too-53-hatteras/">Poppa Wahoo Too, 53' Hatteras</a></li><li><a href="poppa-bay-25-sea-hunt/">Poppa Bay, 25' Sea Hunt</a></li><li><a href="poppa-toon-23-barletta/">Poppa Toon, 23' Barletta</a></li></ul></div><div class="f-grp"><h4>The trips</h4><ul><li><a href="deep-sea-fishing-islamorada/">Deep Sea Charters</a></li><li><a href="half-day-fishing-charter-islamorada/">Half Day Trips</a></li><li><a href="nearshore-fishing-islamorada/">Nearshore &amp; Reef</a></li><li><a href="swordfish-charters-islamorada/">Overnight Swordfish</a></li><li><a href="shark-fishing-islamorada/">Evening Shark Trips</a></li><li><a href="sunset-cruise-islamorada/">Sunset Cruise</a></li><li><a href="sandbar-boat-trip-islamorada/">Sandbar Trips</a></li><li><a href="family-fishing-charters-islamorada/">Family Charters</a></li><li><a href="bachelor-party-charter-islamorada/">Bachelor Parties</a></li><li><a href="corporate-fishing-charters-islamorada/">Corporate Days</a></li></ul></div><div class="f-grp"><h4>Target species</h4><ul><li><a href="wahoo-fishing-islamorada/">Wahoo</a></li><li><a href="mahi-mahi-fishing-islamorada/">Mahi Mahi</a></li><li><a href="sailfish-charters-islamorada/">Sailfish</a></li><li><a href="swordfish-charters-islamorada/">Swordfish</a></li><li><a href="blue-marlin-islamorada/">Blue Marlin</a></li><li><a href="blackfin-tuna-islamorada/">Blackfin Tuna</a></li><li><a href="king-mackerel-islamorada/">King Mackerel</a></li><li><a href="amberjack-fishing-islamorada/">Amberjack</a></li><li><a href="gag-grouper-islamorada/">Gag Grouper</a></li><li><a href="mutton-snapper-islamorada/">Mutton Snapper</a></li><li><a href="yellowtail-snapper-islamorada/">Yellowtail Snapper</a></li><li><a href="shark-fishing-islamorada/">Sharks</a></li></ul></div><div class="f-grp"><h4>Plan your trip</h4><ul><li><a href="islamorada-fishing-charter-cost/">What a Charter Costs</a></li><li><a href="islamorada-fishing-seasons/">Season Calendar</a></li><li><a href="fishing-charter-from-miami/">From Miami</a></li><li><a href="fishing-charter-from-fort-lauderdale/">From Fort Lauderdale</a></li><li><a href="marathon-fishing-charters/">Near Marathon</a></li><li><a href="fishing-charter-near-postcard-inn/">Postcard Inn</a></li><li><a href="fishing-charter-near-cheeca-lodge/">Cheeca Lodge</a></li><li><a href="fishing-charter-near-islander-resort/">Islander Resort</a></li><li><a href="fishing-charter-near-hawks-cay/">Hawks Cay</a></li><li><a href="https://crossfiber.github.io/captain-key-largo/">Captain Key Largo</a></li></ul></div><div class="f-grp"><h4>Month by month</h4><ul class="foot-months"><li><a href="islamorada-fishing-in-january/">Jan</a></li><li><a href="islamorada-fishing-in-february/">Feb</a></li><li><a href="islamorada-fishing-in-march/">Mar</a></li><li><a href="islamorada-fishing-in-april/">Apr</a></li><li><a href="islamorada-fishing-in-may/">May</a></li><li><a href="islamorada-fishing-in-june/">Jun</a></li><li><a href="islamorada-fishing-in-july/">Jul</a></li><li><a href="islamorada-fishing-in-august/">Aug</a></li><li><a href="islamorada-fishing-in-september/">Sep</a></li><li><a href="islamorada-fishing-in-october/">Oct</a></li><li><a href="islamorada-fishing-in-november/">Nov</a></li><li><a href="islamorada-fishing-in-december/">Dec</a></li></ul></div>
     </div>
@@ -1064,7 +1021,7 @@ body.modal-open{overflow:hidden}
             <input type="email" id="bk-email" placeholder="you@email.com">
           </div>
         </div>
-        <button class="btn bk-submit" id="bkSubmit"><i class="fa-solid fa-paper-plane"></i> Request This Date</button>
+        <button class="btn bk-submit" id="bkSubmit">Request This Date</button>
         <div class="bk-status" id="bkStatus"></div>
         <p class="bk-note">A captain confirms availability directly with you. Prefer to talk? Call or text <a href="tel:+13053945350" style="color:var(--gold-deep);font-weight:700">(305) 394-5350</a>.</p>
       </div>
@@ -1246,7 +1203,7 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
       b.addEventListener('click',function(){
         selDate=new Date(view.getFullYear(),view.getMonth(),parseInt(b.getAttribute('data-day'),10));
         renderCal();
-        bkPicked.innerHTML='<i class="fa-solid fa-calendar-check"></i>'+selDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+        bkPicked.textContent=selDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
       });
     });
   }
@@ -1290,7 +1247,7 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
     mark('bkf-trip',!trip);mark('bkf-name',!name);
     mark('bkf-phone',phone.replace(/\D/g,'').length<10);
     mark('bkf-email',!(email!==''&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)));
-    if(!selDate){ok=false;bkPicked.innerHTML='<i class="fa-solid fa-calendar-check"></i>Pick a day on the calendar first.';}
+    if(!selDate){ok=false;bkPicked.textContent='Pick a day on the calendar first.';}
     if(!ok){st.className='bk-status show error';st.textContent='Almost there. Check the highlighted fields and your date.';return;}
     var dstr=selDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
     var subject=encodeURIComponent('Booking request: '+trip+' on '+dstr);
@@ -1315,8 +1272,8 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
   }
   f.querySelectorAll('.bw-next').forEach(function(b){b.addEventListener('click',function(){if(valid(cur))show(Math.min(cur+1,2));});});
   f.querySelectorAll('.bw-back').forEach(function(b){b.addEventListener('click',function(){show(Math.max(cur-1,0));});});
-  f.querySelectorAll('.bw-tile').forEach(function(t){t.addEventListener('click',function(){
-    f.querySelectorAll('.bw-tile').forEach(function(x){x.classList.remove('sel');});
+  f.querySelectorAll('.bw-row').forEach(function(t){t.addEventListener('click',function(){
+    f.querySelectorAll('.bw-row').forEach(function(x){x.classList.remove('sel');});
     t.classList.add('sel');t.querySelector('input').checked=true;
     document.getElementById('f-trip').classList.remove('err');
     setTimeout(function(){show(1);},240);
@@ -1325,7 +1282,7 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
   show(0);
   window.bwSelectTrip=function(val){
     var r=f.querySelector('input[name="trip"][value="'+val+'"]');
-    if(r){r.checked=true;r.closest('.bw-tile').classList.add('sel');show(1);}
+    if(r){r.checked=true;r.closest('.bw-row').classList.add('sel');show(1);}
   };
 })();
 window.submitForm=function(e){
