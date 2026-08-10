@@ -101,7 +101,8 @@ nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h)
 .nav-drawer{position:fixed;top:0;right:0;width:340px;max-width:88vw;height:100dvh;background:var(--navy);color:var(--ivory);z-index:1001;transform:translateX(100%);visibility:hidden;transition:transform .32s cubic-bezier(.2,.8,.2,1),visibility .32s;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top)}
 .nav-drawer.open{transform:translateX(0);visibility:visible}
 .drawer-header{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;border-bottom:1px solid var(--line-d)}
-.drawer-header img{height:38px;width:auto}
+.logo-pill{display:inline-flex;align-items:center;background:#fff;border-radius:999px;padding:7px 16px}
+.logo-pill img{height:30px;width:auto;display:block}
 .drawer-close{background:none;border:none;font-size:1.4rem;color:var(--ivory);cursor:pointer;width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center}
 .drawer-close:hover{color:var(--gold-lite)}
 .drawer-links{display:flex;flex-direction:column;flex:1;overflow-y:auto;min-height:0;padding:8px 0}
@@ -375,7 +376,8 @@ body.drawer-open .mobile-actions{visibility:hidden}
 /* FOOTER */
 footer{background:#081224;color:rgba(248,245,238,0.72);padding:62px 0 28px}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1.1fr 1fr 1.1fr;gap:34px}
-.foot-brand img{height:52px;width:auto;margin-bottom:16px}
+.foot-brand .logo-pill{margin-bottom:16px}
+.foot-brand .logo-pill img{height:34px}
 .foot-brand p{font-size:0.93rem;line-height:1.62;max-width:36ch;margin-bottom:16px}
 .foot-social{display:flex;gap:18px}
 .foot-social a{color:rgba(248,245,238,0.72);font-size:1.05rem;transition:color .2s}
@@ -499,7 +501,7 @@ body.modal-open{overflow:hidden}
 <div class="nav-overlay" id="navOverlay"></div>
 <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="Site menu">
   <div class="drawer-header">
-    <img src="assets/logo-dark.png" alt="The Poppa Wahoo Collective logo">
+    <a href="#top" class="logo-pill" aria-label="The Poppa Wahoo Collective home"><img src="assets/logo-dark.png" alt="The Poppa Wahoo Collective logo"></a>
     <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
   </div>
   <nav class="drawer-links">
@@ -509,7 +511,6 @@ body.modal-open{overflow:hidden}
     <a href="#captains">The Captains</a>
     <a href="#reviews">Reviews</a>
     <a href="#faq">FAQ</a>
-    <a href="#contact">Book a Trip</a>
   </nav>
   <div class="drawer-footer">
     <a href="tel:+13053945350" class="drawer-phone"><i class="fa-solid fa-phone-volume"></i> (305) 394-5350</a>
@@ -936,7 +937,7 @@ body.modal-open{overflow:hidden}
     </div>
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="#top"><img src="assets/logo-dark.png" alt="The Poppa Wahoo Collective logo"></a>
+        <a href="#top" class="logo-pill"><img src="assets/logo-dark.png" alt="The Poppa Wahoo Collective logo"></a>
         <p>Family-run, veteran-owned sportfishing out of Islamorada, founded in tribute to Bob Epstein: the Miami Herald fishing editor everyone called Poppa.</p>
         <div class="foot-social">
           <a href="https://www.facebook.com/PoppaWahoo" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
