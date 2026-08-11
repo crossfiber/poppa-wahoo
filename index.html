@@ -321,68 +321,27 @@ body.drawer-open .mobile-actions{visibility:hidden}
 @media(max-width:880px){.faq{padding:60px 0}.faq-grid{grid-template-columns:1fr;gap:26px}.acc-head{padding:17px 4px;font-size:0.98rem}}
 
 /* CONTACT */
-.contact{padding:104px 0;background:var(--navy);color:var(--ivory)}
-.contact .kicker{color:var(--marlin-lite)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.contact-left h2{font-size:clamp(1.9rem,3.4vw,2.8rem);color:#fff;margin-bottom:14px}
-.contact-left h2 em{font-style:italic;font-weight:500;color:var(--gold-lite)}
-.contact-left .csub{color:rgba(248,245,238,0.78);font-size:1.02rem;line-height:1.6;margin-bottom:30px;max-width:46ch}
+.contact{background:var(--navy,var(--night));color:var(--ivory,var(--sand));padding:92px 0 88px}
+.contact-block{max-width:680px;margin:0 auto}
+.contact-block h2{font-size:clamp(1.9rem,3.6vw,2.9rem);color:#fff;margin-bottom:14px}
+.csub{font-size:1.02rem;line-height:1.7;color:rgba(255,255,255,0.72);margin-bottom:36px;max-width:60ch}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
 .field{margin-bottom:22px}
-.field label{display:block;font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--marlin-lite);margin-bottom:9px}
-.field input,.field select,.field textarea{width:100%;padding:11px 2px;border:none;border-bottom:1.5px solid rgba(248,245,238,0.3);background:transparent;color:#fff;font-family:'Figtree',sans-serif;font-size:1.02rem;transition:border-color .2s}
-.field input::placeholder,.field textarea::placeholder{color:rgba(248,245,238,0.4)}
-.field select{color:#fff}
-.field select option{color:var(--navy)}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold-lite)}
-.field textarea{resize:vertical;min-height:84px}
-.field.err input,.field.err select,.field.err textarea{border-color:#E08A8A}
-.field .msg{display:none;color:#EFB0A0;font-size:0.82rem;margin-top:7px}
+.field label{display:block;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.72);margin-bottom:8px}
+.field input,.field textarea{width:100%;background:transparent;border:none;border-bottom:1.5px solid rgba(255,255,255,0.22);color:#fff;font-family:inherit;font-size:1.02rem;padding:10px 2px;transition:border-color .2s}
+.field textarea{min-height:96px;resize:vertical;line-height:1.6}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,0.32)}
+.field input:focus,.field textarea:focus{outline:none;border-bottom-color:var(--gold-lite)}
+.field .msg{display:none;font-size:0.84rem;color:#E8927F;margin-top:7px}
+.field.err input,.field.err textarea{border-bottom-color:#E8927F}
 .field.err .msg{display:block}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.contact form .btn{margin-top:6px}
-.form-status{margin-top:16px;padding:13px 16px;font-size:0.94rem;display:none;border-left:3px solid var(--gold-lite)}
+.contact-block .btn{margin-top:6px}
+.form-status{display:none;margin-top:18px;font-size:0.95rem;line-height:1.6;padding-left:14px;border-left:2px solid var(--gold-lite)}
 .form-status.show{display:block}
-.form-status.success{background:rgba(217,188,114,0.12);color:#EFE0B8}
-.form-status.error{background:rgba(224,138,138,0.12);color:#F2C4B8;border-left-color:#E08A8A}
-.contact-right{border-left:1px solid var(--line-d);padding-left:56px}
-.contact .cl{font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--marlin-lite);margin-bottom:12px}
-.crow{padding:8px 0;font-size:1rem;color:rgba(248,245,238,0.88);line-height:1.55}
-.crow a{font-weight:700;color:#fff}
-.crow a:hover{color:var(--marlin-lite)}
-.c-block{padding-bottom:22px;border-bottom:1px solid var(--line-d-soft);margin-bottom:24px}
-.c-note{font-size:0.94rem;color:rgba(248,245,238,0.64);line-height:1.6}
-.social-line{margin-top:14px;font-size:0.95rem;display:flex;gap:10px;color:rgba(248,245,238,0.4)}
-.social-line a{font-weight:700;color:#fff;transition:color .2s}
-.social-line a:hover{color:var(--marlin-lite)}
-@media(max-width:900px){.contact{padding:60px 0}.contact-grid{grid-template-columns:1fr;gap:38px}.contact-right{border-left:none;border-top:1px solid var(--line-d);padding-left:0;padding-top:26px}}
-@media(max-width:460px){.frow{grid-template-columns:1fr;gap:0}}
-
-/* BOOKING WIZARD */
-.bw-prog{display:none}
-form.bw-on .bw-prog{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.bw-st{font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--marlin-lite)}
-.bw-dots{display:flex;gap:7px}
-.bw-dots i{width:22px;height:3px;background:rgba(248,245,238,0.25);border-radius:2px;transition:background .3s}
-.bw-dots i.on{background:var(--gold)}
-form.bw-on .bw-step{display:none}
-form.bw-on .bw-step.on{display:block}
-.bw-rows{border-top:1px solid rgba(248,245,238,0.16)}
-.field label.bw-row{position:relative;display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding:15px 4px 15px 14px;margin:0;border-bottom:1px solid rgba(248,245,238,0.16);border-left:3px solid transparent;cursor:pointer;text-transform:none;letter-spacing:normal;font-size:1rem;color:var(--ivory);font-weight:400;transition:border-color .2s,background .2s,padding-left .2s}
-.bw-row input{position:absolute;opacity:0;pointer-events:none}
-.bw-row b{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.08rem;color:var(--ivory);line-height:1.3}
-.bw-row em{font-style:normal;font-weight:600;font-size:0.92rem;color:rgba(248,245,238,0.65);white-space:nowrap}
-.bw-row:hover{background:rgba(248,245,238,0.04)}
-.bw-row.sel{border-left-color:var(--gold);background:rgba(248,245,238,0.05)}
-.bw-row.sel b{color:#fff}
-.bw-row.sel em{color:var(--gold-lite)}
-.bw-nav{display:flex;gap:12px;margin-top:20px}
-.bw-ghost{background:transparent;border:1.5px solid rgba(248,245,238,0.4);color:var(--ivory);box-shadow:none}
-.bw-ghost:hover{background:transparent;border-color:var(--gold-lite);color:var(--gold-lite)}
-.bw-back{display:none}
-form.bw-on .bw-back{display:inline-flex}
-.bw-call{margin-top:16px;font-size:0.88rem;color:rgba(248,245,238,0.65)}
-.bw-call a{color:var(--gold-lite);font-weight:700}
-.field .opt{font-weight:600;font-size:0.68rem;letter-spacing:0.08em;color:rgba(248,245,238,0.5);margin-left:6px;text-transform:none}
+.form-status.error{border-left-color:#E8927F;color:#E8927F}
+.c-direct{margin-top:26px;font-size:0.92rem;color:rgba(255,255,255,0.6)}
+.c-direct a{color:var(--gold-lite);font-weight:700}
+@media(max-width:640px){.contact{padding:64px 0 72px}.frow{grid-template-columns:1fr;gap:0}}
 /* FOOTER */
 footer{background:#081224;color:rgba(248,245,238,0.72);padding:62px 0 28px}
 .f-cols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:34px 30px;padding-bottom:30px;border-bottom:1px solid var(--line-d-soft)}
@@ -728,7 +687,6 @@ body.modal-open{overflow:hidden}
 <!-- CAPTAINS -->
 <section id="captains" class="captains">
   <div class="wrap">
-    <div class="kicker"><i class="fa-solid fa-compass"></i> The Captains</div>
     <h2>Mentored by legends. <em>Now running your trip.</em></h2>
     <p class="cap-sub">The collective's captains came up under names like Stu Apte, Flip Pallot, Lefty Kreh, and Ted Williams. Two brothers lead the fleet, backed by two of the most decorated captains in the Upper Keys.</p>
     <div class="cap-leads">
@@ -857,83 +815,36 @@ body.modal-open{overflow:hidden}
 <!-- CONTACT -->
 <section id="contact" class="contact">
   <div class="wrap">
-    <div class="contact-grid">
-      <div class="contact-left">
-        <div class="kicker">Book a Trip</div>
-        <h2>Pick your trip. <em>We'll hold the date.</em></h2>
-        <p class="csub">Send your dates, group size, and the trip you want. A captain gets back to you directly to confirm the boat and the details.</p>
-        <form id="bookForm" name="booking" method="POST" novalidate onsubmit="return submitForm(event)">
-          <div class="bw-prog"><span class="bw-st" id="bwSt">Step 1 of 3</span><span class="bw-dots" id="bwDots"><i class="on"></i><i></i><i></i></span></div>
-          <div class="bw-step" data-step="1">
-            <div class="field" id="f-trip">
-              <label>Which trip?</label>
-              <div class="bw-rows">
-                <label class="bw-row"><input type="radio" name="trip" value="Deep sea half day ($1,475)"><b>Deep sea half day</b><em>$1,475</em></label>
-                <label class="bw-row"><input type="radio" name="trip" value="Deep sea three-quarter or full day ($1,975 / $2,475)"><b>Deep sea, three-quarter or full day</b><em>$1,975 / $2,475</em></label>
-                <label class="bw-row"><input type="radio" name="trip" value="Evening shark trip ($1,000)"><b>Evening shark trip</b><em>$1,000</em></label>
-                <label class="bw-row"><input type="radio" name="trip" value="Overnight swordfish ($2,700)"><b>Overnight swordfish</b><em>$2,700</em></label>
-                <label class="bw-row"><input type="radio" name="trip" value="Nearshore on Poppa Bay (from $1,050)"><b>Nearshore on the Poppa Bay</b><em>from $1,050</em></label>
-                <label class="bw-row"><input type="radio" name="trip" value="Sunset cruise ($575)"><b>Sunset cruise</b><em>$575</em></label>
-                <label class="bw-row"><input type="radio" name="trip" value="Sandbar cruise ($800)"><b>Sandbar cruise</b><em>$800</em></label>
-                <label class="bw-row"><input type="radio" name="trip" value="Bahamas / custom trip"><b>Bahamas or a custom trip</b><em>Let's talk</em></label>
-              </div>
-              <div class="msg">Tap a trip so the right captain answers.</div>
+    <div class="contact-block">
+      <h2>Questions? <em>Start here.</em></h2>
+      <p class="csub">Rates and trips are all posted above. If you want to talk through a date, a group, or something custom, send it over and a captain gets back to you directly.</p>
+        <form id="bookForm" name="contact" method="POST" novalidate onsubmit="return submitForm(event)">
+          <div class="frow">
+            <div class="field" id="f-name">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name">
+              <div class="msg">We need a name to reply to.</div>
             </div>
-            <div class="bw-nav"><button type="button" class="btn bw-next">Next</button></div>
+            <div class="field" id="f-phone">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(305) 555-0123" autocomplete="tel">
+              <div class="msg">That number looks short. Double-check it.</div>
+            </div>
           </div>
-          <div class="bw-step" data-step="2">
-            <div class="field" id="f-guests">
-              <label for="guests">How many aboard?</label>
-              <select id="guests" name="guests">
-                <option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option><option>7+</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="message">Dates &amp; details</label>
-              <textarea id="message" name="message" placeholder="Your dates in the Keys, and anything we should know."></textarea>
-            </div>
-            <div class="bw-nav"><button type="button" class="btn bw-ghost bw-back">Back</button><button type="button" class="btn bw-next">Next</button></div>
+          <div class="field" id="f-email">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email">
+            <div class="msg">That looks incomplete. Try something like you@email.com.</div>
           </div>
-          <div class="bw-step" data-step="3">
-            <div class="frow">
-              <div class="field" id="f-name">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name">
-                <div class="msg">We need a name for the booking.</div>
-              </div>
-              <div class="field" id="f-phone">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" placeholder="(305) 555-0123" autocomplete="tel">
-                <div class="msg">That number looks short. Double-check it.</div>
-              </div>
-            </div>
-            <div class="field" id="f-email">
-              <label for="email">Email <span class="opt">optional</span></label>
-              <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email">
-              <div class="msg">That looks incomplete. Try something like you@email.com.</div>
-            </div>
-            <div class="bw-nav"><button type="button" class="btn bw-ghost bw-back">Back</button><button type="submit" class="btn">Request the Date</button></div>
+          <div class="field" id="f-message">
+            <label for="message">What can we help with?</label>
+            <textarea id="message" name="message" placeholder="Dates you are in the Keys, group size, a question about a trip, anything at all."></textarea>
+            <div class="msg">Tell us a little about what you are after.</div>
           </div>
-          <p class="bw-call">Rather talk it through? Call or text <a href="tel:+13053945350">(305) 394-5350</a>.</p>
+          <button type="submit" class="btn">Send It Over</button>
           <div class="form-status" id="formStatus"></div>
         </form>
-      </div>
-      <div class="contact-right">
-        <div class="c-block">
-          <div class="cl">The dock</div>
-          <div class="crow"><span>Three Waters Resort &amp; Marina<br>84001 Overseas Hwy, Islamorada, FL 33036</span></div>
-          <div class="crow"><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Three+Waters+Resort+and+Marina+84001+Overseas+Hwy+Islamorada+FL" target="_blank" rel="noopener">Get directions</a></span></div>
-          <div class="crow"><span>Nearshore trips depart Square Grouper, 80461 Overseas Hwy</span></div>
-        </div>
-        <div class="c-block">
-          <div class="cl">Reach the fleet</div>
-          <div class="crow"><span>Call or text <a href="tel:+13053945350">(305) 394-5350</a></span></div>
-          <div class="crow"><span><a href="mailto:davidepstein1969@icloud.com">davidepstein1969@icloud.com</a></span></div>
-          <div class="crow"><span>On the water daily, 5 am to 9 pm</span></div>
-          <div class="social-line"><a href="https://www.facebook.com/ThePoppaWahooCollective" target="_blank" rel="noopener">Facebook</a><span aria-hidden="true">&middot;</span><a href="https://www.instagram.com/poppawahoo" target="_blank" rel="noopener">Instagram</a></div>
-        </div>
-        <p class="c-note">Boats and dates go fast in season, especially the overnight swordfish runs. If your dates are fixed, send them today and let the captains work out the rest with you.</p>
-      </div>
+      <p class="c-direct">Prefer to talk? Call or text <a href="tel:+13053945350">(305) 394-5350</a>.</p>
     </div>
   </div>
 </section>
@@ -1258,56 +1169,25 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
   });
 })();
 
-(function(){
-  var f=document.getElementById('bookForm');if(!f)return;
-  var steps=[].slice.call(f.querySelectorAll('.bw-step'));
-  var dots=[].slice.call(f.querySelectorAll('#bwDots i'));
-  var st=document.getElementById('bwSt');
-  var cur=0;
-  f.classList.add('bw-on');
-  function show(i){cur=i;steps.forEach(function(s,j){s.classList.toggle('on',j===i);});dots.forEach(function(d,j){d.classList.toggle('on',j<=i);});st.textContent='Step '+(i+1)+' of 3';}
-  function valid(i){
-    if(i===0){var ok=!!f.querySelector('input[name="trip"]:checked');document.getElementById('f-trip').classList.toggle('err',!ok);return ok;}
-    return true;
-  }
-  f.querySelectorAll('.bw-next').forEach(function(b){b.addEventListener('click',function(){if(valid(cur))show(Math.min(cur+1,2));});});
-  f.querySelectorAll('.bw-back').forEach(function(b){b.addEventListener('click',function(){show(Math.max(cur-1,0));});});
-  f.querySelectorAll('.bw-row').forEach(function(t){t.addEventListener('click',function(){
-    f.querySelectorAll('.bw-row').forEach(function(x){x.classList.remove('sel');});
-    t.classList.add('sel');t.querySelector('input').checked=true;
-    document.getElementById('f-trip').classList.remove('err');
-    setTimeout(function(){show(1);},240);
-  });});
-  ['name','phone','email'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('input',function(){var w=document.getElementById('f-'+id);if(w)w.classList.remove('err');});});
-  show(0);
-  window.bwSelectTrip=function(val){
-    var r=f.querySelector('input[name="trip"][value="'+val+'"]');
-    if(r){r.checked=true;r.closest('.bw-row').classList.add('sel');show(1);}
-  };
-})();
 window.submitForm=function(e){
   e.preventDefault();
   var status=document.getElementById('formStatus');
   var ok=true;
   function mark(id,bad){var el=document.getElementById(id);if(el)el.classList.toggle('err',bad);if(bad)ok=false;}
-  var tripEl=document.querySelector('#bookForm input[name="trip"]:checked');
-  var trip=tripEl?tripEl.value:'';
   var name=(document.getElementById('name').value||'').trim();
   var phone=(document.getElementById('phone').value||'').trim();
   var email=(document.getElementById('email').value||'').trim();
-  var guests=document.getElementById('guests').value;
   var msg=(document.getElementById('message').value||'').trim();
   mark('f-name',!name);
-  var phoneOk=phone.replace(/\D/g,'').length>=10;mark('f-phone',!phoneOk);
-  var emailOk=email===''||/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  mark('f-email',!emailOk);
-  if(!trip){document.getElementById('f-trip').classList.add('err');ok=false;}
+  mark('f-phone',phone.replace(/\D/g,'').length<10);
+  mark('f-email',!(email!==''&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)));
+  mark('f-message',!msg);
   if(!ok){status.className='form-status show error';status.textContent='Almost there. Check the highlighted fields and resend.';return false;}
-  var subject=encodeURIComponent('Charter booking request: '+trip+' for '+name);
-  var body=encodeURIComponent('Name: '+name+'\nPhone: '+phone+'\nEmail: '+(email||'(not given)')+'\nTrip: '+trip+'\nGuests: '+guests+'\n\nDates and details:\n'+(msg||'(none)'));
+  var subject=encodeURIComponent('Message from the Poppa Wahoo website: '+name);
+  var body=encodeURIComponent('Name: '+name+'\nPhone: '+phone+'\nEmail: '+email+'\n\nMessage:\n'+msg+'\n\nSent from: '+window.location.href);
   window.location.href='mailto:davidepstein1969@icloud.com?subject='+subject+'&body='+body;
   status.className='form-status show success';
-  status.innerHTML="Your email app just opened with the request pre-filled. Faster answer? Call or text <a href='tel:+13053945350' style='color:var(--gold-lite);font-weight:700;'>(305) 394-5350</a>.";
+  status.innerHTML="Your email app just opened with everything filled in. Faster answer? Call or text <a href='tel:+13053945350' style='color:var(--gold-lite);font-weight:700;'>(305) 394-5350</a>.";
   return false;
 };
 </script>
