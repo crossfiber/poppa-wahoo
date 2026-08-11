@@ -78,7 +78,6 @@ body.drawer-open{overflow:hidden}
 .crumbs a{color:var(--mar);font-weight:600}
 .crumbs i{font-size:0.7em;margin:0 8px;opacity:0.6}
 .hero{padding:18px 0 34px;border-bottom:1px solid var(--line)}
-.kick{display:block;font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mar);margin-bottom:12px}
 .hero h1{font-size:clamp(1.9rem,4.6vw,3rem);color:var(--dark);max-width:22ch;margin-bottom:14px}
 .hero h1 em{font-style:italic;color:var(--accd);font-weight:500}
 .hero .lede{font-size:1.06rem;color:var(--txs);max-width:66ch;line-height:1.6}
@@ -95,7 +94,6 @@ body.drawer-open{overflow:hidden}
 .prose h2{font-size:1.5rem;color:var(--dark);margin:26px 0 12px}
 .side-img{width:100%;border:1px solid var(--line);margin-bottom:16px}
 .side-card{background:var(--dark);color:#fff;padding:24px}
-.side-card .sc-k{display:block;font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--marl);margin-bottom:8px}
 .side-card .sc-p{font-family:var(--hf);font-weight:600;font-size:1.7rem;line-height:1;margin-bottom:6px}
 .side-card .sc-m{font-size:0.85rem;color:rgba(255,255,255,0.72);margin-bottom:16px}
 .side-card .btn{width:100%}
@@ -265,7 +263,6 @@ body.modal-open{overflow:hidden}
 <div class="wrap">
   <div class="crumbs"><a href="../">Poppa Wahoo</a><i class="fa-solid fa-angle-right"></i>Fishing in February</div>
   <header class="hero">
-    <span class="kick">Month by month &middot; Islamorada</span>
     <h1>February: <em>the sailfish keep coming.</em></h1>
     <p class="lede">The shortest month fishes like January's twin: sails on the edge, kings and cero mackerel everywhere, and the wrecks stacked when the fronts settle.</p>
   </header>
@@ -275,7 +272,7 @@ body.modal-open{overflow:hidden}
     <aside class="side">
       <img class="side-img" src="../assets/catch-tuna.jpg" alt="A February blackfin aboard a Poppa Wahoo Collective charter" loading="lazy">
       <div class="side-card">
-        <span class="sc-k">Fish this month</span>
+        
         <span class="sc-p">$1,975 / $2,475</span>
         <span class="sc-m">Three-quarter or full day</span>
         <a href="#" class="btn" data-book="Deep sea three-quarter or full day ($1,975 / $2,475)">Book This Trip</a>
@@ -407,7 +404,7 @@ body.modal-open{overflow:hidden}
     if(!selDate){ok=false;bkPicked.textContent='Pick a day on the calendar first.';}
     if(!ok){st.className='bk-status show error';st.textContent='Almost there. Check the highlighted fields and your date.';return;}
     var dstr=selDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
-    var subject=encodeURIComponent('Booking request: '+trip+' on '+dstr);
+    var subject=encodeURIComponent('Booking request via The Poppa Wahoo Collective: '+trip+' on '+dstr);
     var body=encodeURIComponent('Trip: '+trip+'\nDate: '+dstr+'\nGuests: '+guests+'\nName: '+name+'\nPhone: '+phone+'\nEmail: '+email+'\nPage: '+window.location.href);
     window.location.href='mailto:davidepstein1969@icloud.com?subject='+subject+'&body='+body;
     st.className='bk-status show success';st.textContent='Your email app opened with the request. We confirm the date with you directly.';
