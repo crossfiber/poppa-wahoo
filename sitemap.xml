@@ -160,4 +160,10 @@
 <url><loc>https://crossfiber.github.io/poppa-wahoo/captains/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://crossfiber.github.io/poppa-wahoo/bob-epstein/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://crossfiber.github.io/poppa-wahoo/gallery/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://crossfiber.github.io/poppa-wahoo/privacy/</loc></url><url><loc>https://crossfiber.github.io/poppa-wahoo/terms/</loc></url></urlset>
+<url><loc>https://crossfiber.github.io/poppa-wahoo/privacy/</loc></url><url><loc>https://crossfiber.github.io/poppa-wahoo/terms/</loc></url>  <url>
+    <loc>https://crossfiber.github.io/poppa-wahoo/islamorada-fish-species/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
