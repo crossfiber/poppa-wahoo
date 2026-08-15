@@ -208,6 +208,8 @@ body.drawer-open .mobile-actions{visibility:hidden}
 @media(max-width:560px){.fleet-grid{grid-template-columns:1fr 1fr;gap:12px}.bc-photo{height:150px}.bc-body{padding:14px 14px 14px}.bc-body h3{font-size:1.02rem}.bc-body p{font-size:0.82rem}.bc-body .tlink{font-size:0.7rem;margin-top:12px}}
 
 /* TRIPS & RATES */
+.vet-line{margin-top:12px;padding-left:14px;border-left:3px solid var(--gold)}
+.vet-line b{color:var(--gold-deep)}
 .trips{padding:104px 0}
 .trips-head{margin-bottom:16px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}
 .trips-head h2{font-size:clamp(2rem,3.8vw,3.1rem);color:var(--navy);max-width:18ch}
@@ -247,7 +249,13 @@ body.drawer-open .mobile-actions{visibility:hidden}
 .captains h2{font-size:clamp(2rem,3.8vw,3.1rem);color:#fff;max-width:20ch;margin-bottom:14px}
 .captains h2 em{font-style:italic;font-weight:500;color:var(--gold-lite)}
 .captains .cap-sub{font-size:1.02rem;color:rgba(248,245,238,0.78);max-width:62ch;line-height:1.66;margin-bottom:48px}
-.cap-leads{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px}
+.cap-leads{display:grid;grid-template-columns:minmax(0,42%) 1fr;gap:0;margin-bottom:22px;background:#0A1428;border:1px solid var(--line-d-soft)}
+.cap-leads .cap-card{border:none;display:contents}
+.cap-leads .cc-img{aspect-ratio:auto;min-height:300px}
+.cap-leads .cc-meta{display:flex;flex-direction:column;justify-content:center;padding:32px 34px}
+.cap-leads .cc-meta h3{font-size:1.7rem}
+.cap-leads .cc-meta p{font-size:1.02rem;line-height:1.6;max-width:46ch}
+@media(max-width:820px){.cap-leads{grid-template-columns:1fr}.cap-leads .cc-img{min-height:220px}.cap-leads .cc-meta{padding:22px}.cap-leads .cc-meta h3{font-size:1.4rem}}
 .cap-card{position:relative;overflow:hidden;background:#0A1428;border:1px solid var(--line-d-soft)}
 .cap-card .cc-img{aspect-ratio:16/9.6;background-size:cover;background-position:center 30%;transition:transform .5s}
 .cap-card:hover .cc-img{transform:scale(1.03)}
@@ -263,6 +271,13 @@ body.drawer-open .mobile-actions{visibility:hidden}
 .legend .creds{list-style:none;font-size:0.88rem;color:rgba(248,245,238,0.85)}
 .legend .creds li{padding:7px 0;border-top:1px solid var(--line-d-soft);display:flex;gap:10px;align-items:baseline}
 .legend .creds i{color:var(--gold-lite);font-size:0.85em;flex-shrink:0}
+.owner-block{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start;margin-top:22px;padding:26px 28px;background:#0A1428;border:1px solid var(--line-d-soft);border-left:3px solid var(--gold)}
+.ob-face{width:120px;height:120px;background-size:cover;display:block}
+.ob-tx h3{font-size:1.32rem;margin-top:2px}
+.ob-tx p{font-size:0.98rem;line-height:1.62;color:rgba(248,245,238,0.82);margin-top:10px;max-width:66ch}
+.ob-vet{border-top:1px solid var(--line-d-soft);padding-top:13px}
+.ob-vet b{color:var(--gold-lite)}
+@media(max-width:700px){.owner-block{grid-template-columns:1fr;gap:16px;padding:22px}.ob-face{width:96px;height:96px}}
 .crew-note{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:20px 26px;border:1px dashed var(--line-d);font-size:0.94rem;color:rgba(248,245,238,0.75)}
 .crew-note b{color:#fff}
 .crew-note i{color:var(--gold-lite)}
@@ -535,7 +550,7 @@ body.modal-open{overflow:hidden}
       </div>
       <div class="legacy-copy">
         <p><b>Bob Epstein wrote about Florida Keys fishing for the Miami Herald for decades.</b> Photojournalist, author of more than a dozen books, and a fixture of the Islamorada docks, he fished with George H. W. Bush and Ted Williams and put the Keys bite into print for generations of anglers. Everyone called him Poppa.</p>
-        <p>When he passed in January 2025, his sons <b>David and Brian Epstein</b> did the only thing that made sense: they built a charter operation worthy of his name. The Poppa Wahoo Collective runs four boats out of Islamorada, crewed by captains who were mentored by names like Stu Apte, Flip Pallot, and Lefty Kreh. It is veteran owned, family run, and serious about one thing above all: sending you home with a story Poppa would have written up.</p>
+        <p>When he passed in January 2025, his sons <b>David and Brian Epstein</b> did the only thing that made sense: they built a charter operation worthy of his name. The Poppa Wahoo Collective runs four boats out of Islamorada, crewed by captains who were mentored by names like Stu Apte, Flip Pallot, and Lefty Kreh. David is a retired United States Air Force veteran rated 100 percent disabled, so the fleet is veteran owned in the literal sense, family run, and serious about one thing above all: sending you home with a story Poppa would have written up.</p>
         <div class="legacy-facts">
           <div class="lf"><b>2025</b><span>Founded in tribute to Bob Epstein</span></div>
           <div class="lf"><b>4 boats</b><span>From a 55' Hatteras to a sandbar tritoon</span></div>
@@ -601,6 +616,7 @@ body.modal-open{overflow:hidden}
     <div class="trips-head">
       <h2>Trips and rates, <em>posted in plain sight.</em></h2>
       <p class="incl"><b>Every fishing trip includes</b> the boat, fuel, captain and mate, rods, tackle, live bait, fishing licenses, bottled water, snacks, and catch cleaning at the dock.</p>
+      <p class="incl vet-line"><b>Veteran owned.</b> Active duty, veterans and their families get a discount on every trip on this board. Say so when you call and it comes off the price.</p>
     </div>
     <div class="trips-compact"><a class="tc-tile" href="half-day-fishing-charter-islamorada/"><span class="tc-name">Deep Sea Half Day</span><span class="tc-price">$1,475</span><span class="tc-meta">4 hrs</span></a><a class="tc-tile" href="deep-sea-fishing-islamorada/"><span class="tc-name">Three-Quarter &amp; Full Day</span><span class="tc-price">$1,975 / $2,475</span><span class="tc-meta">6 or 8 hrs</span></a><a class="tc-tile" href="shark-fishing-islamorada/"><span class="tc-name">Evening Shark Trip</span><span class="tc-price">$1,000</span><span class="tc-meta">3 hrs &middot; 5 pm</span></a><a class="tc-tile" href="swordfish-charters-islamorada/"><span class="tc-name">Overnight Swordfish</span><span class="tc-price">$2,700</span><span class="tc-meta">Overnight</span></a><a class="tc-tile" href="nearshore-fishing-islamorada/"><span class="tc-name">Nearshore on Poppa Bay</span><span class="tc-price">From $1,050</span><span class="tc-meta">Calm water</span></a><a class="tc-tile" href="sunset-cruise-islamorada/"><span class="tc-name">Sunset Cruise</span><span class="tc-price">$575</span><span class="tc-meta">2 hrs</span></a><a class="tc-tile" href="sandbar-boat-trip-islamorada/"><span class="tc-name">Sandbar Cruise</span><span class="tc-price">$800</span><span class="tc-meta">3 hrs</span></a><a class="tc-book" href="#" data-book="">Book a Trip</a></div>
 
@@ -645,7 +661,7 @@ body.modal-open{overflow:hidden}
         <div class="tr-main">
           <div class="tr-meta"><i class="fa-solid fa-moon"></i> Overnight &middot; roughly 30 miles offshore</div>
           <h3><a href="swordfish-charters-islamorada/" style="color:inherit">Overnight Swordfish</a></h3>
-          <p>Electric reels, glow sticks, and deep baits in the swordfish grounds while the boat sleeps six. Captain David's specialty, and the fleet's signature hunt.</p>
+          <p>Electric reels, glow sticks, and deep baits in the swordfish grounds while the boat sleeps six. The fleet's signature hunt.</p>
         </div>
         <div class="tr-price"><span class="p">$2,700<small>Overnight</small></span><a class="book" href="#contact" data-book="Overnight swordfish ($2,700)">Book It</a><a class="tlink" href="swordfish-charters-islamorada/" style="margin-top:8px;font-size:0.72rem">Trip details <i class="fa-solid fa-arrow-right-long"></i></a></div>
       </div></div></div>
@@ -699,7 +715,7 @@ body.modal-open{overflow:hidden}
 <section id="captains" class="captains">
   <div class="wrap">
     <h2>Mentored by legends. <em>Now running your trip.</em></h2>
-    <p class="cap-sub">The collective's captains came up under names like Stu Apte, Flip Pallot, Lefty Kreh, and Ted Williams. Two brothers lead the fleet, backed by two of the most decorated captains in the Upper Keys.</p>
+    <p class="cap-sub">The collective's captains came up under names like Stu Apte, Flip Pallot, Lefty Kreh, and Ted Williams. Capt. Brian Epstein leads the fleet, backed by two of the most decorated captains in the Upper Keys. The business behind them is family-run and veteran-owned.</p>
     <div class="cap-leads">
       <article class="cap-card">
         <div class="cc-img" style="background-image:url('assets/capt-brian.jpg');background-position:center 25%" role="img" aria-label="Captain Brian Epstein at the helm on the water"></div>
@@ -707,14 +723,6 @@ body.modal-open{overflow:hidden}
           <div class="role">Co-Owner &middot; USCG 100 Ton Master</div>
           <h3>Capt. Brian Epstein</h3>
           <p>"Captain Key Largo." More than 40 years on Upper Keys water, a proven tournament captain, and an all-around specialist from the backcountry to the blue water.</p>
-        </div>
-      </article>
-      <article class="cap-card">
-        <div class="cc-img" style="background-image:url('assets/capt-david.jpg');background-position:center 30%" role="img" aria-label="Captain David Epstein aboard the Poppa Wahoo"></div>
-        <div class="cc-meta">
-          <div class="role">Co-Owner &middot; Swordfish Program</div>
-          <h3>Capt. David Epstein</h3>
-          <p>Runs the overnight swordfish trips 30 miles out: electric reels, deep baits, and long nights that end in the fish of a lifetime.</p>
         </div>
       </article>
     </div>
@@ -748,6 +756,17 @@ body.modal-open{overflow:hidden}
       </span>
       <span><b>And the crew that makes it run:</b> Capt. Rick Martin II and Gabriela Urbina, with mates Wyatt, Tyler, and Ricky earning names in the reviews below.</span>
     </div>
+
+      <article class="owner-block">
+        <span class="ob-face" style="background-image:url('assets/capt-david.jpg');background-position:center 30%" role="img" aria-label="David Epstein, owner of the Poppa Wahoo Collective"></span>
+        <div class="ob-tx">
+          <div class="role">Owner &middot; U.S. Air Force, Retired</div>
+          <h3>David Epstein</h3>
+          <p>Bob's son, and the reason there is a fleet at all. David is a retired United States Air Force veteran rated 100 percent disabled. He and his brother Brian bought the boat and named her for their father, then put Islamorada's best captains on the bridge. He runs the business, not the boat.</p>
+          <p class="ob-vet"><b>Veteran owned, and veterans ride for less.</b> Active duty, veterans and their families get a discount on any charter in the fleet. Mention it when you call and it comes off the trip.</p>
+        </div>
+      </article>
+
   </div>
 </section>
 
@@ -1147,7 +1166,7 @@ body.modal-open{overflow:hidden}
 {
   "@context":"https://schema.org","@graph":[
     {"@type":"Person","name":"Brian Epstein","jobTitle":"Charter Captain, USCG 100 Ton Master","worksFor":{"@type":"LocalBusiness","name":"The Poppa Wahoo Collective"},"description":"Co-owner of the Poppa Wahoo Collective. More than 40 years fishing the Upper Florida Keys, tournament captain, son of Miami Herald fishing editor Bob Epstein.","knowsAbout":["Offshore fishing","Backcountry fishing","Florida Keys navigation"]},
-    {"@type":"Person","name":"David Epstein","jobTitle":"Charter Captain","worksFor":{"@type":"LocalBusiness","name":"The Poppa Wahoo Collective"},"description":"Co-owner of the Poppa Wahoo Collective and captain of the overnight swordfish program."},
+    {"@type":"Person","name":"David Epstein","jobTitle":"Owner","worksFor":{"@type":"LocalBusiness","name":"The Poppa Wahoo Collective"},"description":"Co-owner of the Poppa Wahoo Collective and captain of the overnight swordfish program."},
     {"@type":"Person","name":"Skip Bradeen","jobTitle":"Charter Captain","worksFor":{"@type":"LocalBusiness","name":"The Poppa Wahoo Collective"},"description":"Voted Best Charter Boat Captain in the Upper Keys 14 consecutive years and named one of the Top 50 Captains in the World by Salt Water Fisherman magazine. Clients have included Mickey Mantle, Paul Newman, Terry Bradshaw, Don Johnson, and Jimmy Johnson."},
     {"@type":"Person","name":"George Clark Jr.","jobTitle":"Charter Captain","worksFor":{"@type":"LocalBusiness","name":"The Poppa Wahoo Collective"},"description":"More than 30 years guiding the Florida Keys, known from Discovery Channel's The Fish Guyz."}
   ]
