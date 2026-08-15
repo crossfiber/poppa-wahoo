@@ -160,12 +160,29 @@ body.drawer-open .mobile-actions{visibility:hidden}
 
 /* RATE BOARD (overlaps hero) */
 
-/* ---- Reel: full-bleed silent loop, no chrome ---- */
-.reel{width:100vw;margin-left:calc(50% - 50vw);background:var(--navy);line-height:0;position:relative}
-.reel video{width:100%;height:clamp(340px,46vw,620px);object-fit:cover;display:block}
-@media(max-width:760px){.reel video{height:clamp(230px,58vw,320px)}}
-@media(prefers-reduced-motion:reduce){.reel video{display:none}
-  .reel{height:clamp(230px,46vw,620px);background-image:url('assets/reel-poster.jpg');background-size:cover;background-position:center}}
+/* ---- Reel: contained window, click to expand ---- */
+.reel{padding:64px 0 8px;background:var(--ivory)}
+.reel-shell{max-width:1000px;margin:0 auto;padding:0 20px}
+.reel-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--navy);
+  border:1px solid var(--line);box-shadow:0 22px 50px rgba(13,27,51,0.16);cursor:pointer}
+.reel-frame video{width:100%;height:100%;object-fit:cover;display:block}
+.reel-badge{position:absolute;right:14px;bottom:14px;z-index:2;display:inline-flex;align-items:center;gap:9px;
+  background:rgba(13,27,51,0.72);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:0.09em;
+  text-transform:uppercase;padding:9px 14px;transition:background .2s,color .2s;pointer-events:none}
+.reel-frame:hover .reel-badge,.reel-frame:focus-visible .reel-badge{background:var(--gold);color:var(--navy)}
+.reel-frame:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.reel-cap{margin-top:14px;font-size:0.9rem;color:var(--text-soft);text-align:center}
+@media(max-width:760px){.reel{padding:44px 0 4px}.reel-shell{padding:0 18px}.reel-cap{font-size:0.8rem;margin-top:11px}}
+@media(prefers-reduced-motion:reduce){.reel-frame video{display:none}
+  .reel-frame{background-image:url('assets/reel-poster.jpg');background-size:cover;background-position:center}}
+/* lightbox */
+.rlb{position:fixed;inset:0;z-index:1200;background:rgba(8,15,28,0.94);display:none;align-items:center;
+  justify-content:center;padding:24px}
+.rlb.on{display:flex}
+.rlb video{width:min(1400px,100%);max-height:84vh;background:#000;box-shadow:0 30px 80px rgba(0,0,0,0.6)}
+.rlb-x{position:absolute;top:14px;right:20px;background:none;border:none;color:#fff;font-size:2rem;line-height:1;
+  cursor:pointer;width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center}
+body.rlb-open{overflow:hidden}
 .rateboard{position:relative;z-index:5;max-width:1240px;margin:-72px auto 0;padding:0 40px}
 .rb-inner{background:var(--navy);color:var(--ivory);border:1px solid rgba(217,188,114,0.35);box-shadow:0 26px 60px rgba(13,27,51,0.35);display:grid;grid-template-columns:repeat(4,1fr) auto;align-items:stretch}
 .rb-cell{padding:26px 26px 24px;border-right:1px solid var(--line-d-soft)}
@@ -550,13 +567,26 @@ body.modal-open{overflow:hidden}
 </div>
 
 <!-- REEL -->
-<section class="reel" aria-label="The Poppa Wahoo running out of Islamorada">
-  <video id="pwReel" muted loop playsinline preload="none" poster="assets/reel-poster.jpg"
-         aria-label="Silent looping footage of the Poppa Wahoo running past the mangroves and at the dock">
+<section class="reel" aria-label="Video: the Poppa Wahoo running out of Islamorada">
+  <div class="reel-shell">
+    <div class="reel-frame" id="reelFrame" role="button" tabindex="0" aria-label="Play the Poppa Wahoo video full screen">
+      <video id="pwReel" muted loop playsinline preload="none" poster="assets/reel-poster.jpg">
+        <source src="assets/pw-reel.mp4" type="video/mp4">
+        <source src="assets/pw-reel.webm" type="video/webm">
+      </video>
+      <span class="reel-badge">Expand</span>
+    </div>
+    <p class="reel-cap">The Poppa Wahoo running out of Islamorada.</p>
+  </div>
+</section>
+
+<div class="rlb" id="reelLb" role="dialog" aria-modal="true" aria-label="Poppa Wahoo video">
+  <button class="rlb-x" id="reelLbX" aria-label="Close video">&times;</button>
+  <video id="reelLbV" controls loop playsinline preload="none">
     <source src="assets/pw-reel.mp4" type="video/mp4">
     <source src="assets/pw-reel.webm" type="video/webm">
   </video>
-</section>
+</div>
 
 <!-- LEGACY -->
 <section id="legacy" class="legacy">
@@ -1425,19 +1455,52 @@ window.submitForm=function(e){
 
 <script>
 (function(){
-  var v=document.getElementById('pwReel');
-  if(!v) return;
-  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var loaded=false;
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(e.isIntersecting){
-        if(!loaded){v.preload='auto';v.load();loaded=true;}
-        var p=v.play(); if(p&&p.catch)p.catch(function(){});
-      } else if(!v.paused){ v.pause(); }
+  var v=document.getElementById('pwReel'), f=document.getElementById('reelFrame');
+  var lb=document.getElementById('reelLb'), lbv=document.getElementById('reelLbV'), x=document.getElementById('reelLbX');
+  if(!v||!f) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    var loaded=false;
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          if(!loaded){v.preload='auto';v.load();loaded=true;}
+          var p=v.play(); if(p&&p.catch)p.catch(function(){});
+        } else if(!v.paused){ v.pause(); }
+      });
+    },{rootMargin:'200px 0px',threshold:0.15});
+    io.observe(f);
+  }
+  function open(){
+    lb.classList.add('on'); document.body.classList.add('rlb-open');
+    lbv.preload='auto'; lbv.currentTime=0;
+    var p=lbv.play(); if(p&&p.catch)p.catch(function(){});
+    v.pause(); x.focus();
+    // on a phone, hand off to native fullscreen so it can rotate to landscape
+    if(window.matchMedia&&window.matchMedia('(max-width: 760px)').matches){
+      try{
+        if(lbv.webkitEnterFullscreen){lbv.webkitEnterFullscreen();}
+        else if(lbv.requestFullscreen){lbv.requestFullscreen().catch(function(){});}
+      }catch(err){}
+    }
+  }
+  function close(){
+    lb.classList.remove('on'); document.body.classList.remove('rlb-open');
+    lbv.pause(); f.focus();
+    if(!reduce){var p=v.play(); if(p&&p.catch)p.catch(function(){});}
+  }
+  f.addEventListener('click',open);
+  f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});
+  x.addEventListener('click',close);
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))close();});
+  ['fullscreenchange','webkitfullscreenchange','webkitendfullscreen'].forEach(function(ev){
+    document.addEventListener(ev,function(){
+      var fs=document.fullscreenElement||document.webkitFullscreenElement;
+      if(!fs&&lb.classList.contains('on')&&window.matchMedia('(max-width: 760px)').matches)close();
     });
-  },{rootMargin:'200px 0px',threshold:0.15});
-  io.observe(v);
+  });
+  lbv.addEventListener('webkitendfullscreen',function(){if(lb.classList.contains('on'))close();});
 })();
 </script>
 </body>
