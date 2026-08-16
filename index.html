@@ -286,7 +286,7 @@ body.rlb-open{overflow:hidden}
 .crew-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-bottom:26px}
 .crew-card{display:flex;flex-direction:column;min-width:0;background:#0A1428;border:1px solid var(--line-d-soft);
   text-decoration:none;transition:border-color .22s,transform .22s,box-shadow .22s}
-.crew-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,0.3)}
+.crew-card{cursor:default}
 .cw-photo{display:block;width:100%;aspect-ratio:4/5;background-size:cover;background-position:center 25%;background-color:var(--navy-2)}
 .cw-mono{display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,var(--navy-2),#0A1428)}
 .cw-mono span{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:2.4rem;color:var(--gold);letter-spacing:0.04em}
@@ -778,41 +778,41 @@ body.modal-open{overflow:hidden}
     <p class="cap-sub">The collective's captains came up under names like Stu Apte, Flip Pallot, Lefty Kreh, and Ted Williams. Capt. Brian Epstein leads the fleet, backed by two of the most decorated captains in the Upper Keys. The business behind them is family-run and veteran-owned.</p>
     <div class="crew-grid">
 
-      <a class="crew-card" href="captains/">
+      <div class="crew-card">
         <span class="cw-photo" style="background-image:url('assets/capt-brian.jpg');background-position:center 22%" role="img" aria-label="Capt. Brian Epstein"></span>
         <span class="cw-tx">
           <span class="cw-role">Co-owner &middot; USCG 100 Ton Master</span>
           <span class="cw-name">Capt. Brian Epstein</span>
           <span class="cw-line">Forty years on Upper Keys water, backcountry to blue, and a proven tournament captain.</span>
         </span>
-      </a>
+      </div>
 
-      <a class="crew-card" href="captains/">
+      <div class="crew-card">
         <span class="cw-photo cw-mono" role="img" aria-label="Capt. Skip Bradeen"><span>SB</span></span>
         <span class="cw-tx">
           <span class="cw-role">Fleet legend</span>
           <span class="cw-name">Capt. Skip Bradeen</span>
           <span class="cw-line">Best Charter Boat Captain in the Upper Keys fourteen years running. Fished Mantle, Newman and Bradshaw.</span>
         </span>
-      </a>
+      </div>
 
-      <a class="crew-card" href="captains/">
+      <div class="crew-card">
         <span class="cw-photo" style="background-image:url('assets/capt-george.jpg');background-position:center 25%" role="img" aria-label="Capt. George Clark Jr."></span>
         <span class="cw-tx">
           <span class="cw-role">Fleet legend</span>
           <span class="cw-name">Capt. George Clark Jr.</span>
           <span class="cw-line">Thirty years guiding these islands, and one of the faces of Discovery Channel's "The Fish Guyz."</span>
         </span>
-      </a>
+      </div>
 
-      <a class="crew-card" href="captains/">
+      <div class="crew-card">
         <span class="cw-photo" style="background-image:url('assets/capt-shane.jpg');background-position:62% 20%" role="img" aria-label="Capt. Shane Gore"></span>
         <span class="cw-tx">
           <span class="cw-role">Captain</span>
           <span class="cw-name">Capt. Shane Gore</span>
           <span class="cw-line cw-todo">Bio to come from the dock. Years on the water, the boat he runs, and what he is known for.</span>
         </span>
-      </a>
+      </div>
 
     </div>
 
@@ -959,7 +959,7 @@ body.modal-open{overflow:hidden}
         </address>
         <div class="social-line"><a href="https://www.facebook.com/ThePoppaWahooCollective" target="_blank" rel="noopener">Facebook</a><span aria-hidden="true">&middot;</span><a href="https://www.instagram.com/poppawahoo" target="_blank" rel="noopener">Instagram</a></div>
       </div>
-      <div class="f-grp"><h4>Explore</h4><ul><li><a href="#legacy">The Legacy</a></li><li><a href="#fleet">The Fleet</a></li><li><a href="#trips">Trips &amp; Rates</a></li><li><a href="captains/">The Captains</a></li><li><a href="bob-epstein/">The Bob Epstein Story</a></li><li><a href="reviews/">Reviews</a></li><li><a href="gallery/">Gallery</a></li><li><a href="#faq">FAQ</a></li></ul></div><div class="f-grp"><h4>The boats</h4><ul><li><a href="poppa-wahoo-55-hatteras/">Poppa Wahoo, 55' Hatteras</a></li><li><a href="poppa-wahoo-too-53-hatteras/">Poppa Wahoo Too, 53' Hatteras</a></li><li><a href="poppa-bay-25-sea-hunt/">Poppa Bay, 25' Sea Hunt</a></li><li><a href="poppa-toon-23-barletta/">Poppa Toon, 23' Barletta</a></li></ul></div><div class="f-grp"><h4>The trips</h4><ul><li><a href="deep-sea-fishing-islamorada/">Deep Sea Charters</a></li><li><a href="half-day-fishing-charter-islamorada/">Half Day Trips</a></li><li><a href="nearshore-fishing-islamorada/">Nearshore &amp; Reef</a></li><li><a href="swordfish-charters-islamorada/">Overnight Swordfish</a></li><li><a href="shark-fishing-islamorada/">Evening Shark Trips</a></li><li><a href="sunset-cruise-islamorada/">Sunset Cruise</a></li><li><a href="sandbar-boat-trip-islamorada/">Sandbar Trips</a></li><li><a href="family-fishing-charters-islamorada/">Family Charters</a></li><li><a href="bachelor-party-charter-islamorada/">Bachelor Parties</a></li><li><a href="corporate-fishing-charters-islamorada/">Corporate Days</a></li></ul></div><div class="f-grp"><h4>Target species</h4><ul><li><a href="islamorada-fish-species/">All Species Guide</a></li><li><a href="wahoo-fishing-islamorada/">Wahoo</a></li><li><a href="mahi-mahi-fishing-islamorada/">Mahi Mahi</a></li><li><a href="sailfish-charters-islamorada/">Sailfish</a></li><li><a href="swordfish-charters-islamorada/">Swordfish</a></li><li><a href="blue-marlin-islamorada/">Blue Marlin</a></li><li><a href="blackfin-tuna-islamorada/">Blackfin Tuna</a></li><li><a href="king-mackerel-islamorada/">King Mackerel</a></li><li><a href="amberjack-fishing-islamorada/">Amberjack</a></li><li><a href="gag-grouper-islamorada/">Gag Grouper</a></li><li><a href="mutton-snapper-islamorada/">Mutton Snapper</a></li><li><a href="yellowtail-snapper-islamorada/">Yellowtail Snapper</a></li><li><a href="shark-fishing-islamorada/">Sharks</a></li></ul></div><div class="f-grp"><h4>Plan your trip</h4><ul><li><a href="islamorada-fishing-charter-cost/">What a Charter Costs</a></li><li><a href="islamorada-fishing-seasons/">Season Calendar</a></li><li><a href="fishing-charter-from-miami/">From Miami</a></li><li><a href="fishing-charter-from-fort-lauderdale/">From Fort Lauderdale</a></li><li><a href="marathon-fishing-charters/">Near Marathon</a></li><li><a href="fishing-charter-near-postcard-inn/">Postcard Inn</a></li><li><a href="fishing-charter-near-cheeca-lodge/">Cheeca Lodge</a></li><li><a href="fishing-charter-near-islander-resort/">Islander Resort</a></li><li><a href="fishing-charter-near-hawks-cay/">Hawks Cay</a></li><li><a href="https://crossfiber.github.io/captain-key-largo/">Captain Key Largo</a></li></ul></div><div class="f-grp"><h4>Month by month</h4><ul class="foot-months"><li><a href="islamorada-fishing-in-january/">Jan</a></li><li><a href="islamorada-fishing-in-february/">Feb</a></li><li><a href="islamorada-fishing-in-march/">Mar</a></li><li><a href="islamorada-fishing-in-april/">Apr</a></li><li><a href="islamorada-fishing-in-may/">May</a></li><li><a href="islamorada-fishing-in-june/">Jun</a></li><li><a href="islamorada-fishing-in-july/">Jul</a></li><li><a href="islamorada-fishing-in-august/">Aug</a></li><li><a href="islamorada-fishing-in-september/">Sep</a></li><li><a href="islamorada-fishing-in-october/">Oct</a></li><li><a href="islamorada-fishing-in-november/">Nov</a></li><li><a href="islamorada-fishing-in-december/">Dec</a></li></ul></div>
+      <div class="f-grp"><h4>Explore</h4><ul><li><a href="#legacy">The Legacy</a></li><li><a href="#fleet">The Fleet</a></li><li><a href="#trips">Trips &amp; Rates</a></li><li><a href="#captains">The Captains</a></li><li><a href="bob-epstein/">The Bob Epstein Story</a></li><li><a href="reviews/">Reviews</a></li><li><a href="gallery/">Gallery</a></li><li><a href="#faq">FAQ</a></li></ul></div><div class="f-grp"><h4>The boats</h4><ul><li><a href="poppa-wahoo-55-hatteras/">Poppa Wahoo, 55' Hatteras</a></li><li><a href="poppa-wahoo-too-53-hatteras/">Poppa Wahoo Too, 53' Hatteras</a></li><li><a href="poppa-bay-25-sea-hunt/">Poppa Bay, 25' Sea Hunt</a></li><li><a href="poppa-toon-23-barletta/">Poppa Toon, 23' Barletta</a></li></ul></div><div class="f-grp"><h4>The trips</h4><ul><li><a href="deep-sea-fishing-islamorada/">Deep Sea Charters</a></li><li><a href="half-day-fishing-charter-islamorada/">Half Day Trips</a></li><li><a href="nearshore-fishing-islamorada/">Nearshore &amp; Reef</a></li><li><a href="swordfish-charters-islamorada/">Overnight Swordfish</a></li><li><a href="shark-fishing-islamorada/">Evening Shark Trips</a></li><li><a href="sunset-cruise-islamorada/">Sunset Cruise</a></li><li><a href="sandbar-boat-trip-islamorada/">Sandbar Trips</a></li><li><a href="family-fishing-charters-islamorada/">Family Charters</a></li><li><a href="bachelor-party-charter-islamorada/">Bachelor Parties</a></li><li><a href="corporate-fishing-charters-islamorada/">Corporate Days</a></li></ul></div><div class="f-grp"><h4>Target species</h4><ul><li><a href="islamorada-fish-species/">All Species Guide</a></li><li><a href="wahoo-fishing-islamorada/">Wahoo</a></li><li><a href="mahi-mahi-fishing-islamorada/">Mahi Mahi</a></li><li><a href="sailfish-charters-islamorada/">Sailfish</a></li><li><a href="swordfish-charters-islamorada/">Swordfish</a></li><li><a href="blue-marlin-islamorada/">Blue Marlin</a></li><li><a href="blackfin-tuna-islamorada/">Blackfin Tuna</a></li><li><a href="king-mackerel-islamorada/">King Mackerel</a></li><li><a href="amberjack-fishing-islamorada/">Amberjack</a></li><li><a href="gag-grouper-islamorada/">Gag Grouper</a></li><li><a href="mutton-snapper-islamorada/">Mutton Snapper</a></li><li><a href="yellowtail-snapper-islamorada/">Yellowtail Snapper</a></li><li><a href="shark-fishing-islamorada/">Sharks</a></li></ul></div><div class="f-grp"><h4>Plan your trip</h4><ul><li><a href="islamorada-fishing-charter-cost/">What a Charter Costs</a></li><li><a href="islamorada-fishing-seasons/">Season Calendar</a></li><li><a href="fishing-charter-from-miami/">From Miami</a></li><li><a href="fishing-charter-from-fort-lauderdale/">From Fort Lauderdale</a></li><li><a href="marathon-fishing-charters/">Near Marathon</a></li><li><a href="fishing-charter-near-postcard-inn/">Postcard Inn</a></li><li><a href="fishing-charter-near-cheeca-lodge/">Cheeca Lodge</a></li><li><a href="fishing-charter-near-islander-resort/">Islander Resort</a></li><li><a href="fishing-charter-near-hawks-cay/">Hawks Cay</a></li><li><a href="https://crossfiber.github.io/captain-key-largo/">Captain Key Largo</a></li></ul></div><div class="f-grp"><h4>Month by month</h4><ul class="foot-months"><li><a href="islamorada-fishing-in-january/">Jan</a></li><li><a href="islamorada-fishing-in-february/">Feb</a></li><li><a href="islamorada-fishing-in-march/">Mar</a></li><li><a href="islamorada-fishing-in-april/">Apr</a></li><li><a href="islamorada-fishing-in-may/">May</a></li><li><a href="islamorada-fishing-in-june/">Jun</a></li><li><a href="islamorada-fishing-in-july/">Jul</a></li><li><a href="islamorada-fishing-in-august/">Aug</a></li><li><a href="islamorada-fishing-in-september/">Sep</a></li><li><a href="islamorada-fishing-in-october/">Oct</a></li><li><a href="islamorada-fishing-in-november/">Nov</a></li><li><a href="islamorada-fishing-in-december/">Dec</a></li></ul></div>
     </div>
     <div class="foot-bottom">
       <div class="fb-row">
