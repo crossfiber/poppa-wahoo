@@ -277,28 +277,40 @@ body.rlb-open{overflow:hidden}
 .captains h2{font-size:clamp(2rem,3.8vw,3.1rem);color:#fff;max-width:20ch;margin-bottom:14px}
 .captains h2 em{font-style:italic;font-weight:500;color:var(--gold-lite)}
 .captains .cap-sub{font-size:1.02rem;color:rgba(248,245,238,0.78);max-width:62ch;line-height:1.66;margin-bottom:48px}
-.cap-leads{display:grid;grid-template-columns:minmax(0,42%) 1fr;gap:0;margin-bottom:22px;background:#0A1428;border:1px solid var(--line-d-soft)}
-.cap-leads .cap-card{border:none;display:contents}
-.cap-leads .cc-img{aspect-ratio:auto;min-height:300px}
-.cap-leads .cc-meta{display:flex;flex-direction:column;justify-content:center;padding:32px 34px}
-.cap-leads .cc-meta h3{font-size:1.7rem}
-.cap-leads .cc-meta p{font-size:1.02rem;line-height:1.6;max-width:46ch}
-@media(max-width:820px){.cap-leads{grid-template-columns:1fr}.cap-leads .cc-img{min-height:220px}.cap-leads .cc-meta{padding:22px}.cap-leads .cc-meta h3{font-size:1.4rem}}
-.cap-card{position:relative;overflow:hidden;background:#0A1428;border:1px solid var(--line-d-soft)}
-.cap-card .cc-img{aspect-ratio:16/9.6;background-size:cover;background-position:center 30%;transition:transform .5s}
-.cap-card:hover .cc-img{transform:scale(1.03)}
-.cap-card .cc-meta{padding:20px 24px 22px;border-top:2px solid var(--gold)}
-.cap-card .cc-meta .role{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-lite);margin-bottom:6px}
-.cap-card .cc-meta h3{font-size:1.5rem;color:#fff;margin-bottom:8px}
-.cap-card .cc-meta p{font-size:0.93rem;color:rgba(248,245,238,0.75);line-height:1.6}
-.legends{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px}
-.legend{background:rgba(248,245,238,0.045);border:1px solid var(--line-d-soft);border-left:3px solid var(--gold);padding:28px 28px 26px}
+
 .legend .role{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-lite);margin-bottom:8px}
 .legend h3{font-size:1.5rem;color:#fff;margin-bottom:10px}
 .legend p{font-size:0.95rem;color:rgba(248,245,238,0.78);line-height:1.64;margin-bottom:12px}
-.legend .creds{list-style:none;font-size:0.88rem;color:rgba(248,245,238,0.85)}
-.legend .creds li{padding:7px 0;border-top:1px solid var(--line-d-soft);display:flex;gap:10px;align-items:baseline}
-.legend .creds i{color:var(--gold-lite);font-size:0.85em;flex-shrink:0}
+
+/* ---- Crew roster: uniform 4-up, 2-up on phone ---- */
+.crew-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-bottom:26px}
+.crew-card{display:flex;flex-direction:column;min-width:0;background:#0A1428;border:1px solid var(--line-d-soft);
+  text-decoration:none;transition:border-color .22s,transform .22s,box-shadow .22s}
+.crew-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,0.3)}
+.cw-photo{display:block;width:100%;aspect-ratio:4/5;background-size:cover;background-position:center 25%;background-color:var(--navy-2)}
+.cw-mono{display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,var(--navy-2),#0A1428)}
+.cw-mono span{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:2.4rem;color:var(--gold);letter-spacing:0.04em}
+.cw-tx{display:flex;flex-direction:column;padding:16px 18px 20px;border-top:2px solid var(--gold);flex:1;min-width:0}
+.cw-role{font-size:0.66rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--gold-lite);margin-bottom:7px}
+.cw-name{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.16rem;line-height:1.18;color:#fff;margin-bottom:9px}
+.cw-line{font-size:0.86rem;line-height:1.55;color:rgba(248,245,238,0.74)}
+.cw-todo{color:rgba(248,245,238,0.45);font-style:italic}
+.lineage-band{padding:20px 22px;background:rgba(248,245,238,0.045);border-left:3px solid var(--gold);
+  font-size:0.95rem;line-height:1.65;color:rgba(248,245,238,0.8);margin-bottom:20px}
+.lineage-band b{color:var(--gold-lite)}
+.crew-note-line{font-size:0.94rem;line-height:1.6;color:rgba(248,245,238,0.7);padding:18px 22px;
+  border:1px dashed var(--line-d)}
+.crew-note-line b{color:#fff}
+@media(max-width:1000px){.crew-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
+@media(max-width:760px){
+  .crew-grid{gap:12px;margin-bottom:20px}
+  .cw-tx{padding:13px 14px 16px}
+  .cw-name{font-size:1rem}
+  .cw-line{font-size:0.79rem;line-height:1.5}
+  .cw-role{font-size:0.6rem;letter-spacing:0.1em}
+  .cw-mono span{font-size:1.9rem}
+  .lineage-band,.crew-note-line{padding:16px 16px;font-size:0.86rem}
+}
 .owner-block{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start;margin-top:22px;padding:26px 28px;background:#0A1428;border:1px solid var(--line-d-soft);border-left:3px solid var(--gold)}
 .ob-face{width:120px;height:120px;background-size:cover;display:block}
 .ob-tx h3{font-size:1.32rem;margin-top:2px}
@@ -306,16 +318,11 @@ body.rlb-open{overflow:hidden}
 .ob-vet{border-top:1px solid var(--line-d-soft);padding-top:13px}
 .ob-vet b{color:var(--gold-lite)}
 @media(max-width:700px){.owner-block{grid-template-columns:1fr;gap:16px;padding:22px}.ob-face{width:96px;height:96px}}
-.lineage{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-d-soft);font-size:0.9rem;line-height:1.6;color:rgba(248,245,238,0.72)}
-.lineage b{color:var(--gold-lite)}
-.crew-note{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:20px 26px;border:1px dashed var(--line-d);font-size:0.94rem;color:rgba(248,245,238,0.75)}
+
 .crew-note b{color:#fff}
 .crew-note i{color:var(--gold-lite)}
-.crew-faces{display:flex;flex-shrink:0}
-.crew-faces span{width:52px;height:52px;border-radius:50%;border:2px solid var(--gold);background-size:cover;background-position:center 25%;display:block}
-.crew-faces span + span{margin-left:-12px}
-.legend-face{width:56px;height:56px;border-radius:50%;border:2px solid var(--gold);background-size:cover;background-position:center 30%;float:right;margin:0 0 10px 14px}
-@media(max-width:900px){.captains{padding:60px 0}.cap-leads,.legends{grid-template-columns:1fr;gap:14px}.captains .cap-sub{margin-bottom:28px}.cap-card .cc-img{aspect-ratio:16/9}}
+
+@media(max-width:900px){.captains{padding:60px 0}.captains .cap-sub{margin-bottom:28px}.cap-card }
 
 /* REVIEWS */
 .reviews{padding:110px 0}
@@ -769,49 +776,51 @@ body.modal-open{overflow:hidden}
   <div class="wrap">
     <h2>Mentored by legends. <em>Now running your trip.</em></h2>
     <p class="cap-sub">The collective's captains came up under names like Stu Apte, Flip Pallot, Lefty Kreh, and Ted Williams. Capt. Brian Epstein leads the fleet, backed by two of the most decorated captains in the Upper Keys. The business behind them is family-run and veteran-owned.</p>
-    <div class="cap-leads">
-      <article class="cap-card">
-        <div class="cc-img" style="background-image:url('assets/capt-brian.jpg');background-position:center 25%" role="img" aria-label="Captain Brian Epstein at the helm on the water"></div>
-        <div class="cc-meta">
-          <div class="role">Co-Owner &middot; USCG 100 Ton Master</div>
-          <h3>Capt. Brian Epstein</h3>
-          <p>"Captain Key Largo." More than 40 years on Upper Keys water, a proven tournament captain, and an all-around specialist from the backcountry to the blue water.</p>
-        </div>
-      </article>
-    </div>
-    <div class="legends">
-      <div class="legend">
-        <div class="role">Fleet Legend</div>
-        <h3>Capt. Skip Bradeen</h3>
-        <p>Half a century of Islamorada charter history on one flybridge.</p>
-        <ul class="creds">
-          <li><i class="fa-solid fa-trophy"></i> Voted Best Charter Boat Captain in the Upper Keys 14 years straight</li>
-          <li><i class="fa-solid fa-earth-americas"></i> Named one of the Top 50 Captains in the World by Salt Water Fisherman</li>
-          <li><i class="fa-solid fa-star"></i> Fished with Mickey Mantle, Paul Newman, Terry Bradshaw, Don Johnson, and Jimmy Johnson</li>
-        </ul>
-      </div>
-      <div class="legend">
-        <span class="legend-face" style="background-image:url('assets/capt-george.jpg')" role="img" aria-label="Captain George Clark Jr. of the Poppa Wahoo Collective"></span>
-        <div class="role">Fleet Legend</div>
-        <h3>Capt. George Clark Jr.</h3>
-        <p>Three decades of guiding, and a second name this fleet was built on.</p>
-        <ul class="creds">
-          <li><i class="fa-solid fa-clock"></i> More than 30 years guiding the Florida Keys</li>
-          <li><i class="fa-solid fa-tv"></i> Known from Discovery Channel's "The Fish Guyz"</li>
-          <li><i class="fa-solid fa-quote-left"></i> "Captain George was the best!!" writes Sonya, after 19 keepers in one trip</li>
-        </ul>
-        <p class="lineage"><b>Capt. George Clark Sr.</b> is George's father, and the Clarks have been fishing these islands together since 1973. The collective carries his name alongside Poppa's, because the same two families taught each other this water.</p>
-      </div>
-    </div>
-    <div class="crew-note">
-      <span class="crew-faces">
-        <span style="background-image:url('assets/capt-rick.jpg');background-position:center 20%" role="img" aria-label="Captain Rick Martin II holding a wahoo"></span>
-        <span style="background-image:url('assets/gabriela.jpg')" role="img" aria-label="Gabriela Urbina of the Poppa Wahoo Collective"></span>
-      </span>
-      <span><b>And the crew that makes it run:</b> Capt. Rick Martin II and Gabriela Urbina, with mates Wyatt, Tyler, and Ricky earning names in the reviews below.</span>
+    <div class="crew-grid">
+
+      <a class="crew-card" href="captains/">
+        <span class="cw-photo" style="background-image:url('assets/capt-brian.jpg');background-position:center 22%" role="img" aria-label="Capt. Brian Epstein"></span>
+        <span class="cw-tx">
+          <span class="cw-role">Co-owner &middot; USCG 100 Ton Master</span>
+          <span class="cw-name">Capt. Brian Epstein</span>
+          <span class="cw-line">Forty years on Upper Keys water, backcountry to blue, and a proven tournament captain.</span>
+        </span>
+      </a>
+
+      <a class="crew-card" href="captains/">
+        <span class="cw-photo cw-mono" role="img" aria-label="Capt. Skip Bradeen"><span>SB</span></span>
+        <span class="cw-tx">
+          <span class="cw-role">Fleet legend</span>
+          <span class="cw-name">Capt. Skip Bradeen</span>
+          <span class="cw-line">Best Charter Boat Captain in the Upper Keys fourteen years running. Fished Mantle, Newman and Bradshaw.</span>
+        </span>
+      </a>
+
+      <a class="crew-card" href="captains/">
+        <span class="cw-photo" style="background-image:url('assets/capt-george.jpg');background-position:center 25%" role="img" aria-label="Capt. George Clark Jr."></span>
+        <span class="cw-tx">
+          <span class="cw-role">Fleet legend</span>
+          <span class="cw-name">Capt. George Clark Jr.</span>
+          <span class="cw-line">Thirty years guiding these islands, and one of the faces of Discovery Channel's "The Fish Guyz."</span>
+        </span>
+      </a>
+
+      <a class="crew-card" href="captains/">
+        <span class="cw-photo" style="background-image:url('assets/capt-shane.jpg');background-position:62% 20%" role="img" aria-label="Capt. Shane Gore"></span>
+        <span class="cw-tx">
+          <span class="cw-role">Captain</span>
+          <span class="cw-name">Capt. Shane Gore</span>
+          <span class="cw-line cw-todo">Bio to come from the dock. Years on the water, the boat he runs, and what he is known for.</span>
+        </span>
+      </a>
+
     </div>
 
-      <article class="owner-block">
+    <p class="lineage-band"><b>Capt. George Clark Sr.</b> is George's father, and the Clarks have been fishing these islands together since 1973. The collective carries his name alongside Poppa's, because the same two families taught each other this water.</p>
+
+    <p class="crew-note-line"><b>And the crew that makes it run:</b> Capt. Rick Martin II and Gabriela Urbina, with mates Wyatt, Tyler and Ricky earning names in the reviews below.</p>
+
+    <article class="owner-block">
         <span class="ob-face" style="background-image:url('assets/capt-david.jpg');background-position:center 30%" role="img" aria-label="David Epstein, owner of the Poppa Wahoo Collective"></span>
         <div class="ob-tx">
           <div class="role">Owner &middot; U.S. Air Force, Retired</div>
