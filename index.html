@@ -271,6 +271,13 @@ body.rlb-open{overflow:hidden}
 }
 
 /* CAPTAINS */
+.namesake{position:relative;padding:0 0 0;background:var(--navy)}
+.namesake-img{display:block;width:100vw;margin-left:calc(50% - 50vw);height:clamp(300px,46vw,620px);object-fit:cover;object-position:center 26%}
+.namesake-cap{max-width:1240px;margin:0 auto;padding:26px 24px 34px;display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap}
+.namesake-cap .nc-rule{flex:0 0 2px;align-self:stretch;min-height:52px;background:var(--gold)}
+.namesake-cap p{color:rgba(255,255,255,0.82);font-size:0.98rem;line-height:1.6;max-width:62ch;margin:0}
+.namesake-cap b{color:#fff}
+@media(max-width:760px){.namesake-cap{padding:22px 22px 30px;gap:14px;flex-direction:column}.namesake-cap .nc-rule{flex:0 0 2px;align-self:flex-start;width:52px;height:2px;min-height:0}.namesake-cap p{font-size:0.92rem}}
 .captains{padding:104px 0;background:var(--navy);color:var(--ivory)}
 .captains .kicker{color:var(--gold-lite)}
 .captains .kicker i{color:var(--gold-lite)}
@@ -768,6 +775,15 @@ body.modal-open{overflow:hidden}
       <p style="font-size:0.92rem;color:var(--text-soft);max-width:56ch">Bimini and Bahamas multi-day runs, eco tours, and chef-catered dinner cruises are built to order. Call and tell us what you are picturing.</p>
       <a href="tel:+13053945350" class="btn btn-navy"><i class="fa-solid fa-phone-volume"></i> (305) 394-5350</a>
     </div>
+  </div>
+</section>
+
+<!-- NAMESAKE BAND -->
+<section class="namesake" aria-label="A wahoo on the bow of Poppa Wahoo Too">
+  <img class="namesake-img" src="assets/pw-wahoo-bow.jpg" alt="A wahoo laid across the bow of Poppa Wahoo Too on clear water off Islamorada" loading="lazy" width="2400" height="1600">
+  <div class="namesake-cap">
+    <span class="nc-rule" aria-hidden="true"></span>
+    <p><b>The fish the boats are named for.</b> Wahoo run the Islamorada humps and the deep edge from late fall into spring. They hit at 50 miles an hour, they do not fight long, and they are the best eating fish that swims. Every one that comes over the rail gets filleted at the dock before you leave.</p>
   </div>
 </section>
 
