@@ -970,7 +970,7 @@ body.modal-open{overflow:hidden}
         <p>Family-run, veteran-owned sportfishing out of Islamorada, founded in tribute to Bob Epstein: the Miami Herald fishing editor everyone called Poppa. Backcountry and flats fishing runs with <a href="https://crossfiber.github.io/captain-key-largo/" style="color:var(--gold-lite);font-weight:700">Captain Key Largo</a>, our sister operation an island north.</p>
         <address class="fb-contact">
           <a href="tel:+13053945350">(305) 394-5350</a><br>
-          <a href="mailto:davidepstein1969@icloud.com">davidepstein1969@icloud.com</a><br>
+          <a href="mailto:info@poppawahoo.com">info@poppawahoo.com</a><br>
           84001 Overseas Hwy, Islamorada, FL 33036
         </address>
         <div class="social-line"><a href="https://www.facebook.com/ThePoppaWahooCollective" target="_blank" rel="noopener">Facebook</a><span aria-hidden="true">&middot;</span><a href="https://www.instagram.com/poppawahoo" target="_blank" rel="noopener">Instagram</a></div>
@@ -1060,7 +1060,7 @@ body.modal-open{overflow:hidden}
  "logo": "https://crossfiber.github.io/poppa-wahoo/assets/logo.png",
  "url": "https://crossfiber.github.io/poppa-wahoo/",
  "telephone": "+1-305-394-5350",
- "email": "davidepstein1969@icloud.com",
+ "email": "info@poppawahoo.com",
  "priceRange": "$575 - $2,700",
  "foundingDate": "2025",
  "description": "The Poppa Wahoo Collective is a family-run, veteran-owned sportfishing charter fleet in Islamorada, Florida Keys. Four boats including a 55 foot Hatteras run deep sea charters, overnight swordfish trips, evening shark trips, nearshore fishing, and sunset and sandbar cruises. Founded in 2025 by David and Brian Epstein in tribute to their father Bob Epstein, the Miami Herald fishing editor.",
@@ -1433,7 +1433,7 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
     var dstr=selDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
     var subject=encodeURIComponent('Booking request: '+trip+' on '+dstr);
     var body=encodeURIComponent('Trip: '+trip+'\nDate: '+dstr+'\nGuests: '+guests+'\nName: '+name+'\nPhone: '+phone+'\nEmail: '+email);
-    window.location.href='mailto:davidepstein1969@icloud.com?subject='+subject+'&body='+body;
+    window.location.href='mailto:info@poppawahoo.com?subject='+subject+'&body='+body;
     st.className='bk-status show success';
     st.textContent='Your email app opened with the request. A captain will confirm the date with you directly.';
   });
@@ -1455,7 +1455,7 @@ window.submitForm=function(e){
   if(!ok){status.className='form-status show error';status.textContent='Almost there. Check the highlighted fields and resend.';return false;}
   var subject=encodeURIComponent('Message from the Poppa Wahoo website: '+name);
   var body=encodeURIComponent('Name: '+name+'\nPhone: '+phone+'\nEmail: '+email+'\n\nMessage:\n'+msg+'\n\nSent from: '+window.location.href);
-  window.location.href='mailto:davidepstein1969@icloud.com?subject='+subject+'&body='+body;
+  window.location.href='mailto:info@poppawahoo.com?subject='+subject+'&body='+body;
   status.className='form-status show success';
   status.innerHTML="Your email app just opened with everything filled in. Faster answer? Call or text <a href='tel:+13053945350' style='color:var(--gold-lite);font-weight:700;'>(305) 394-5350</a>.";
   return false;
