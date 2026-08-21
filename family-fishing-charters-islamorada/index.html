@@ -236,13 +236,16 @@ body.modal-open{overflow:hidden}
 .bk-status.error{background:rgba(192,86,74,0.1);color:#8C3B31;border-left-color:#C0564A}
 .bk-status.success{background:rgba(0,0,0,0.05);color:var(--accd)}
 .bk-note{font-size:0.8rem;color:var(--txs);margin-top:10px;line-height:1.5}
+@media(max-width:600px){:root{--blogo:46px}}
+.art-fig{margin:26px 0}.art-fig img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;border:1px solid var(--line)}.art-fig figcaption{font-size:0.82rem;color:#75726B;padding-top:8px}
+@media(max-width:1300px) and (min-width:761px){.nav-links{gap:15px}.nav-links a{font-size:0.87rem}.nav-phone span{display:none}}
 </style>
 </head>
 <body>
 <nav class="top">
   <div class="nav-in">
-    <a href="../" class="nav-brand" aria-label="The Poppa Wahoo Collective home"><img src="../assets/logo-dark.png" alt="The Poppa Wahoo Collective logo" style="height:56px;width:auto"></a>
-    <ul class="nav-links"><li><a href="../#fleet">The Fleet</a></li><li><a href="../#trips">Trips &amp; Rates</a></li><li><a href="../#captains">Captains</a></li><li><a href="../reviews/">Reviews</a></li><li><a href="../#faq">FAQ</a></li></ul>
+    <a href="../" class="nav-brand" aria-label="The Poppa Wahoo Collective home"><img src="../assets/logo-dark.png" alt="The Poppa Wahoo Collective logo" style="height:var(--blogo,56px);width:auto"></a>
+    <ul class="nav-links"><li><a href="../#fleet">The Fleet</a></li><li><a href="../#trips">Trips &amp; Rates</a></li><li><a href="../#captains">Captains</a></li><li><a href="../reviews/">Reviews</a></li><li><a href="../gallery/">Gallery</a></li><li><a href="../islamorada-fishing-seasons/">Seasons</a></li><li><a href="../#faq">FAQ</a></li></ul>
     <div class="nav-right">
       <a href="tel:+13053945350" class="nav-phone"><i class="fa-solid fa-phone-volume"></i><span> (305) 394-5350</span></a>
       <a href="#" class="nav-cta" data-book="Deep sea half day ($1,475)">Book a Trip</a>
@@ -314,7 +317,8 @@ body.modal-open{overflow:hidden}
   </div>
   
   <section class="faq">
-    <h2>Quick answers</h2>
+    <figure class="art-fig"><img src="../assets/pw-sail-family.jpg" alt="A family holding a sailfish across their laps before release" loading="lazy"><figcaption>Some family trips end with a sailfish across everybody's lap.</figcaption></figure>
+<h2>Quick answers</h2>
     <details><summary>What is the best family fishing trip in Islamorada?</summary><p>For most families a morning half day offshore or the calm-water nearshore trip. Young kids do best on the Poppa Bay; teenagers love the big Hatteras. Call and we will match the trip to your ages.</p></details><details><summary>Do kids need fishing licenses?</summary><p>No. The boats' charter licenses cover every guest aboard, kids included.</p></details><details><summary>What if someone gets seasick?</summary><p>Pick the nearshore or sandbar trip and it mostly cannot happen; the water is calm and land stays close. Offshore, morning trips are gentlest, and the Hatteras is the steadiest ride in the fleet.</p></details>
   </section>
   <section class="xlink"><h2>Kid-approved targets</h2><ul><li><a href="../mahi-mahi-fishing-islamorada/"><i class="fa-solid fa-location-arrow"></i>Mahi mahi, the family favorite</a></li><li><a href="../yellowtail-snapper-islamorada/"><i class="fa-solid fa-location-arrow"></i>Yellowtail snapper for the cooler</a></li><li><a href="../king-mackerel-islamorada/"><i class="fa-solid fa-location-arrow"></i>King mackerel that scream drag</a></li><li><a href="../amberjack-fishing-islamorada/"><i class="fa-solid fa-location-arrow"></i>Amberjack for the strong teenager</a></li></ul></section>
