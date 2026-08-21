@@ -236,13 +236,16 @@ body.modal-open{overflow:hidden}
 .bk-status.error{background:rgba(192,86,74,0.1);color:#8C3B31;border-left-color:#C0564A}
 .bk-status.success{background:rgba(0,0,0,0.05);color:var(--accd)}
 .bk-note{font-size:0.8rem;color:var(--txs);margin-top:10px;line-height:1.5}
+@media(max-width:600px){:root{--blogo:46px}}
+.art-fig{margin:26px 0}.art-fig img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;border:1px solid var(--line)}.art-fig figcaption{font-size:0.82rem;color:#75726B;padding-top:8px}
+@media(max-width:1300px) and (min-width:761px){.nav-links{gap:15px}.nav-links a{font-size:0.87rem}.nav-phone span{display:none}}
 </style>
 </head>
 <body>
 <nav class="top">
   <div class="nav-in">
-    <a href="../" class="nav-brand" aria-label="The Poppa Wahoo Collective home"><img src="../assets/logo-dark.png" alt="The Poppa Wahoo Collective logo" style="height:56px;width:auto"></a>
-    <ul class="nav-links"><li><a href="../#fleet">The Fleet</a></li><li><a href="../#trips">Trips &amp; Rates</a></li><li><a href="../#captains">Captains</a></li><li><a href="../reviews/">Reviews</a></li><li><a href="../#faq">FAQ</a></li></ul>
+    <a href="../" class="nav-brand" aria-label="The Poppa Wahoo Collective home"><img src="../assets/logo-dark.png" alt="The Poppa Wahoo Collective logo" style="height:var(--blogo,56px);width:auto"></a>
+    <ul class="nav-links"><li><a href="../#fleet">The Fleet</a></li><li><a href="../#trips">Trips &amp; Rates</a></li><li><a href="../#captains">Captains</a></li><li><a href="../reviews/">Reviews</a></li><li><a href="../gallery/">Gallery</a></li><li><a href="../islamorada-fishing-seasons/">Seasons</a></li><li><a href="../#faq">FAQ</a></li></ul>
     <div class="nav-right">
       <a href="tel:+13053945350" class="nav-phone"><i class="fa-solid fa-phone-volume"></i><span> (305) 394-5350</span></a>
       <a href="#" class="nav-cta" data-book="Deep sea half day ($1,475)">Book a Trip</a>
@@ -314,7 +317,8 @@ body.modal-open{overflow:hidden}
   </div>
   
   <section class="faq">
-    <h2>Quick answers</h2>
+    <figure class="art-fig"><img src="../assets/pw-mahi-kid.jpg" alt="A father and son holding a mahi together on the back deck" loading="lazy"><figcaption>Mahi are the family fish: fast, bright, and steady action when the weeds line up.</figcaption></figure>
+<h2>Quick answers</h2>
     <details><summary>When is mahi season in Islamorada?</summary><p>Spring through summer is prime, with early summer typically the heart of it. Warm months, weed lines, and birds are the formula.</p></details><details><summary>Can kids come on a mahi trip?</summary><p>Mahi trips are the classic family offshore trip: steady action, manageable fights, and a fish that lights up neon colors boatside. Kids are welcome across the fleet.</p></details><details><summary>What happens to our catch?</summary><p>The mate cleans and fillets everything at the dock, free. Several Islamorada restaurants will cook your catch the same night.</p></details>
   </section>
   <section class="xlink"><h2>Coming down from the mainland?</h2><ul><li><a href="../fishing-charter-from-miami/"><i class="fa-solid fa-location-arrow"></i>Mahi Mahi Fishing from Miami</a></li><li><a href="../fishing-charter-from-fort-lauderdale/"><i class="fa-solid fa-location-arrow"></i>Mahi Mahi Fishing from Fort Lauderdale</a></li><li><a href="../marathon-fishing-charters/"><i class="fa-solid fa-location-arrow"></i>Mahi Mahi Fishing near Marathon</a></li></ul></section>
