@@ -236,13 +236,15 @@ body.modal-open{overflow:hidden}
 .bk-status.error{background:rgba(192,86,74,0.1);color:#8C3B31;border-left-color:#C0564A}
 .bk-status.success{background:rgba(0,0,0,0.05);color:var(--accd)}
 .bk-note{font-size:0.8rem;color:var(--txs);margin-top:10px;line-height:1.5}
+@media(max-width:600px){:root{--blogo:46px}}
+@media(max-width:1300px) and (min-width:761px){.nav-links{gap:15px}.nav-links a{font-size:0.87rem}.nav-phone span{display:none}}
 </style>
 </head>
 <body>
 <nav class="top">
   <div class="nav-in">
-    <a href="../" class="nav-brand" aria-label="The Poppa Wahoo Collective home"><img src="../assets/logo-dark.png" alt="The Poppa Wahoo Collective logo" style="height:56px;width:auto"></a>
-    <ul class="nav-links"><li><a href="../#fleet">The Fleet</a></li><li><a href="../#trips">Trips &amp; Rates</a></li><li><a href="../#captains">Captains</a></li><li><a href="../reviews/">Reviews</a></li><li><a href="../#faq">FAQ</a></li></ul>
+    <a href="../" class="nav-brand" aria-label="The Poppa Wahoo Collective home"><img src="../assets/logo-dark.png" alt="The Poppa Wahoo Collective logo" style="height:var(--blogo,56px);width:auto"></a>
+    <ul class="nav-links"><li><a href="../#fleet">The Fleet</a></li><li><a href="../#trips">Trips &amp; Rates</a></li><li><a href="../#captains">Captains</a></li><li><a href="../reviews/">Reviews</a></li><li><a href="../gallery/">Gallery</a></li><li><a href="../islamorada-fishing-seasons/">Seasons</a></li><li><a href="../#faq">FAQ</a></li></ul>
     <div class="nav-right">
       <a href="tel:+13053945350" class="nav-phone"><i class="fa-solid fa-phone-volume"></i><span> (305) 394-5350</span></a>
       <a href="#" class="nav-cta" data-book="Deep sea three-quarter or full day ($1,975 / $2,475)">Book a Trip</a>
