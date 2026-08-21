@@ -236,13 +236,16 @@ body.modal-open{overflow:hidden}
 .bk-status.error{background:rgba(192,86,74,0.1);color:#8C3B31;border-left-color:#C0564A}
 .bk-status.success{background:rgba(0,0,0,0.05);color:var(--accd)}
 .bk-note{font-size:0.8rem;color:var(--txs);margin-top:10px;line-height:1.5}
+@media(max-width:600px){:root{--blogo:46px}}
+.art-fig{margin:26px 0}.art-fig img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;border:1px solid var(--line)}.art-fig figcaption{font-size:0.82rem;color:#75726B;padding-top:8px}
+@media(max-width:1300px) and (min-width:761px){.nav-links{gap:15px}.nav-links a{font-size:0.87rem}.nav-phone span{display:none}}
 </style>
 </head>
 <body>
 <nav class="top">
   <div class="nav-in">
-    <a href="../" class="nav-brand" aria-label="The Poppa Wahoo Collective home"><img src="../assets/logo-dark.png" alt="The Poppa Wahoo Collective logo" style="height:56px;width:auto"></a>
-    <ul class="nav-links"><li><a href="../#fleet">The Fleet</a></li><li><a href="../#trips">Trips &amp; Rates</a></li><li><a href="../#captains">Captains</a></li><li><a href="../reviews/">Reviews</a></li><li><a href="../#faq">FAQ</a></li></ul>
+    <a href="../" class="nav-brand" aria-label="The Poppa Wahoo Collective home"><img src="../assets/logo-dark.png" alt="The Poppa Wahoo Collective logo" style="height:var(--blogo,56px);width:auto"></a>
+    <ul class="nav-links"><li><a href="../#fleet">The Fleet</a></li><li><a href="../#trips">Trips &amp; Rates</a></li><li><a href="../#captains">Captains</a></li><li><a href="../reviews/">Reviews</a></li><li><a href="../gallery/">Gallery</a></li><li><a href="../islamorada-fishing-seasons/">Seasons</a></li><li><a href="../#faq">FAQ</a></li></ul>
     <div class="nav-right">
       <a href="tel:+13053945350" class="nav-phone"><i class="fa-solid fa-phone-volume"></i><span> (305) 394-5350</span></a>
       <a href="#" class="nav-cta" data-book="Deep sea three-quarter or full day ($1,975 / $2,475)">Book a Trip</a>
@@ -314,7 +317,8 @@ body.modal-open{overflow:hidden}
   </div>
   
   <section class="faq">
-    <h2>Quick answers</h2>
+    <figure class="art-fig"><img src="../assets/pw-fleet-pair.jpg" alt="Both Hatteras sportfishers of the collective tied up side by side" loading="lazy"><figcaption>Two Hatteras sportfishers run offshore for the collective, so big groups can split across both.</figcaption></figure>
+<h2>Quick answers</h2>
     <details><summary>What fish do you catch deep sea fishing in Islamorada?</summary><p>Mahi mahi, blackfin tuna, wahoo, sailfish, kingfish, amberjack, and snapper and grouper on the deep drops. The mix changes by season; the captain fishes what the water gives.</p></details><details><summary>How far offshore do you go?</summary><p>Most days work between the reef edge and roughly 20 miles out, the humps and current edges. The boat can go wherever the bite is.</p></details><details><summary>Is seasickness a problem?</summary><p>The 55 foot Hatteras is a heavy, stable sportfisher, the most comfortable ride in the fleet. If you are prone, take a non-drowsy remedy the night before and morning of; calm summer mornings are the gentlest pick.</p></details>
   </section>
   <section class="xlink"><h2>What we chase out there</h2><ul><li><a href="../mahi-mahi-fishing-islamorada/"><i class="fa-solid fa-location-arrow"></i>Mahi mahi on a deep sea day</a></li><li><a href="../wahoo-fishing-islamorada/"><i class="fa-solid fa-location-arrow"></i>Wahoo on the troll</a></li><li><a href="../sailfish-charters-islamorada/"><i class="fa-solid fa-location-arrow"></i>Sailfish on the edge</a></li><li><a href="../blackfin-tuna-islamorada/"><i class="fa-solid fa-location-arrow"></i>Blackfin tuna over the humps</a></li><li><a href="../shark-fishing-islamorada/"><i class="fa-solid fa-location-arrow"></i>Sharks on the evening trip</a></li><li><a href="../swordfish-charters-islamorada/"><i class="fa-solid fa-location-arrow"></i>Swordfish on the overnight</a></li></ul></section>
